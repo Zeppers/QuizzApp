@@ -15,4 +15,5 @@ public class MainActivity extends AppCompatActivity {
 
     }
     void anotherFirstCommit(){}
+    void secondFirstCommit() {}
 }
