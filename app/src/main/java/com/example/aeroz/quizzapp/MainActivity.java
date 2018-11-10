@@ -10,11 +10,5 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-
-    void firstCommit(){
-
-    }
-    void anotherFirstCommit(){}
-    void secondFirstCommit() {}
-    void thirdCommit(){}
+    
 }
