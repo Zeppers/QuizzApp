@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">QuizzApp</string>
+    <string name="splashscreen_txt">Designed and developed with love by <b>Team Zeppers</b></string>
 </resources>
