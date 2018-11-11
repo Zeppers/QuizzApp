@@ -26,4 +26,5 @@ public class RoleplayActivity extends AppCompatActivity {
         Intent intent = new Intent(getBaseContext(),a.getClass());
         startActivity(intent);
     }
+    
 }
