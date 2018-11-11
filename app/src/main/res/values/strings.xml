@@ -34,6 +34,17 @@
     <string name="shome_question">   <u> Why do I need a code?</u>   </string>
     <string name="shome_code">code(ex: 23op53)</string>
 
-    <string name="squestion_questionNr" >Question 1/20</string>
+    <string name="squestion_questionNr">Question 1/20</string>
+
+
+    <string name="pquizdetail_head">Quiz detail</string>
+    <string name="pquizdetail_quizname">Quiz name</string>
+    <string name="pquizdetail_data1">Created on</string>
+    <string name="pquizdetail_data2">Expires on</string>
+    <string name="pquizdetail_info">When expires, you\'ll receive a full report of all results and commits to this quizz on your email address</string>
+    <string name="pquizdetail_desc">Description</string>
+    <string name="pquizdetail_timequest">Time/question</string>
+    <string name="pquizdetail_noquest">No. questions</string>
+    <string name="pquizdetail_seeall">See all questions and answers</string>
 
 </resources>
