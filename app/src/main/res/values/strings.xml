@@ -17,7 +17,6 @@
         results are analysed and used for reports about your activity</string>
 
 
-
     <string name="signin_introd">You must sign in with your <b>institutional email address</b></string>
     <string name="signin_email_hint">Email(name@csie.ase.ro)</string>
     <string name="signin_password_hint">Password</string>
