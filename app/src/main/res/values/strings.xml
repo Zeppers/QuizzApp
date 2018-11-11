@@ -5,13 +5,13 @@
     <string name="splashscreen_txt">Designed and developed with love by <b>Zeppers</b></string>
 
 
-    <string name="roleplay_introd">Before joining us, please tell us if you are a teacher or a student</string>
+    <string name="roleplay_introd">Before joining us, please tell us if you are <b>a teacher or a student</b></string>
     <string name="roleplay_teacher">TEACHER</string>
     <string name="roleplay_teacher_extra">create and manage quizzes<b>analyze results and ranking</b></string>
     <string name="roleplay_student">STUDENT</string>
     <string name="roleplay_student_extra">take quizzes results are analysed and used for reports about your activity</string>
 
-    <string name="signin_introd">You must sign in with your institutional email adress</string>
+    <string name="signin_introd">You must sign in with your <b>institutional email address</b></string>
     <string name="signin_email_hint">Email(name@csie.ase.ro)</string>
     <string name="signin_password_hint">Password</string>
 
