@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">QuizzApp</string>
     <string name="splashscreen_txt">Designed and developed with love by <b>Zeppers</b></string>
+    <string name="roleplay_introd">Before joining us, please tell us if you are a teacher or a student</string>
+    <string name="roleplay_teacher">TEACHER</string>
+    <string name="roleplay_teacher_extra">create and manage quizzes<b>analyze results and ranking</b></string>
+    <string name="roleplay_student">STUDENT</string>
+    <string name="roleplay_student_extra">take quizzes<b>results are analysed and used</b><b>for reports about your activity</b></string>
+    <string name="roleplay_continue">Continue</string>
 </resources>
