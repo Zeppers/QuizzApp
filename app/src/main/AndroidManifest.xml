@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".OnboardingActivity" />
-        <activity android:name=".RoleplayActivity"></activity>
+        <activity android:name=".RoleplayActivity" />
+        <activity android:name=".SigninActivity"></activity>
     </application>
 
 </manifest>
