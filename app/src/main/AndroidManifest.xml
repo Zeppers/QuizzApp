@@ -22,7 +22,9 @@
         <activity android:name=".SigninActivity" />
         <activity android:name=".PHomeActivity" />
         <activity android:name=".PPublicActivity" />
-        <activity android:name=".PPrivateActivity"></activity>
+        <activity android:name=".PPrivateActivity" />
+        <activity android:name=".SHomeActivity" />
+        <activity android:name=".SQuestionActivity"></activity>
     </application>
 
 </manifest>

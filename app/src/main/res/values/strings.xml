@@ -28,4 +28,12 @@
     <string name="phome_private_quizzes">Private quizzes</string>
     <string name="phome_all_public">All the public quizzes</string>
     <string name="phome_all_private">All the private quizzes</string>
+
+    <string name="shome_introd">Hello, student!</string>
+    <string name="shome_explain">To take a quiz you need to type down a code </string>
+    <string name="shome_question">   <u> Why do I need a code?</u>   </string>
+    <string name="shome_code">code(ex: 23op53)</string>
+
+    <string name="squestion_questionNr" >Question 1/20</string>
+
 </resources>

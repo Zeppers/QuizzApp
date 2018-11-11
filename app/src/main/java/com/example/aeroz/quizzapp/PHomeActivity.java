@@ -12,6 +12,6 @@ public class PHomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_phome);
 
         TextView txtView_createQuiz = findViewById(R.id.txtView_createQuiz);
-        TextView txtView_publicQuizzes = findViewById(R.id.txtView_public);
+        TextView txtView_publicQuizzes = findViewById(R.id.txtView_publicquiz);
     }
 }
