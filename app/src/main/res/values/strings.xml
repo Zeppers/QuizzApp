@@ -22,4 +22,11 @@
     <string name="signin_email_hint">Email(name@csie.ase.ro)</string>
     <string name="signin_password_hint">Password</string>
 
+
+    <string name="phome_create_quiz">+Create Quiz</string>
+    <string name="phome_introd">Hello, professor!</string>
+    <string name="phome_public_quizzes">Public quizzes</string>
+    <string name="phome_private_quizzes">Private quizzes</string>
+    <string name="phome_all_public">All the public quizzes</string>
+    <string name="phome_all_private">All the private quizzes</string>
 </resources>

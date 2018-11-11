@@ -19,7 +19,8 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".OnboardingActivity" />
         <activity android:name=".RoleplayActivity" />
-        <activity android:name=".SigninActivity"></activity>
+        <activity android:name=".SigninActivity" />
+        <activity android:name=".PHomeActivity"></activity>
     </application>
 
 </manifest>
