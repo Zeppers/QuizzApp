@@ -16,7 +16,7 @@ public class SplashscreenActivity extends AppCompatActivity {
 
             public void run() {
                 try{
-                    sleep(3000);
+                    sleep(1500);
                     Intent i = new Intent(getApplicationContext(),OnboardingActivity.class);
                     startActivity(i);
                     }
@@ -25,8 +25,6 @@ public class SplashscreenActivity extends AppCompatActivity {
                 };
 
         thread.start();
-
-
 
     }
 }

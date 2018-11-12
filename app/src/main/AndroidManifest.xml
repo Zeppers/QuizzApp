@@ -27,6 +27,7 @@
         <activity android:name=".SQuestionActivity" />
         <activity android:name=".PQuizDetailActivity" />
         <activity android:name=".SResultActivity"></activity>
+        <activity android:name=".SQuizPreviewActivity"></activity>
     </application>
 
 </manifest>

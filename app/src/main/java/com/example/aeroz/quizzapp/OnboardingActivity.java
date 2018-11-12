@@ -9,6 +9,7 @@ import android.widget.Button;
 
 public class OnboardingActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,12 +19,9 @@ public class OnboardingActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                fireActivity(new RoleplayActivity());
+                startActivity(new Intent(getBaseContext(),SigninActivity.class));
             }
         });
     }
-    public void fireActivity(Activity a){
-        Intent intent = new Intent(this,a.getClass());
-        startActivity(intent);
-    }
+
 }
