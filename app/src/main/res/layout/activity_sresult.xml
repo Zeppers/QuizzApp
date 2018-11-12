@@ -7,24 +7,24 @@
     tools:context=".SResultActivity">
 
     <Button
-        android:id="@+id/btn_continue4"
+        android:id="@+id/btn_sresult_submit"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="29dp"
         android:background="@color/colorAccent"
-        android:text="@string/continue_button"
-        android:textSize="20dp"
+        android:text="@string/btn_any_submit"
+        android:textSize="20sp"
         app:fontFamily="@font/quicksand_bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/btn_continue5"
+        android:id="@+id/btn_sresult_retry"
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginStart="24dp"
@@ -33,16 +33,16 @@
         android:layout_marginRight="24dp"
         android:layout_marginBottom="16dp"
         android:background="@color/colorPrimaryDark"
-        android:text="Retry"
-        android:textSize="20dp"
+        android:text="@string/btn_any_retry"
+        android:textSize="20sp"
         app:fontFamily="@font/quicksand_bold"
-        app:layout_constraintBottom_toTopOf="@+id/btn_continue4"
+        app:layout_constraintBottom_toTopOf="@+id/btn_sresult_submit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/txtView_hello2"
+        android:id="@+id/txtView_sresult_scoredesc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -50,7 +50,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
-        android:text="Your score is: "
+        android:text="@string/sresult_scoredesc"
         android:textAlignment="center"
         android:textSize="18sp"
         app:fontFamily="@font/quicksand_bold"
@@ -60,7 +60,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txtView_finished" />
 
     <TextView
-        android:id="@+id/txtView_hello4"
+        android:id="@+id/txtView_sresult_correct"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -68,17 +68,17 @@
         android:layout_marginTop="28dp"
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
-        android:text="Correct"
+        android:text="@string/sresult_corect"
         android:textAlignment="center"
         android:textSize="18sp"
         app:fontFamily="@font/quicksand_bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtView_hello3" />
+        app:layout_constraintTop_toBottomOf="@+id/txtView_sresult_score" />
 
     <TextView
-        android:id="@+id/txtView_hello6"
+        android:id="@+id/txtView_sresult_corectans"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -93,10 +93,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtView_hello4" />
+        app:layout_constraintTop_toBottomOf="@+id/txtView_sresult_correct" />
 
     <TextView
-        android:id="@+id/txtView_hello7"
+        android:id="@+id/txtView_sresult_wrongans"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -111,10 +111,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtView_hello5" />
+        app:layout_constraintTop_toBottomOf="@+id/txtView_sresult_wrong" />
 
     <TextView
-        android:id="@+id/txtView_hello5"
+        android:id="@+id/txtView_sresult_wrong"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -122,17 +122,17 @@
         android:layout_marginTop="28dp"
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
-        android:text="Wrong"
+        android:text="@string/sresult_wrong"
         android:textAlignment="center"
         android:textSize="18sp"
         app:fontFamily="@font/quicksand_bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtView_hello3" />
+        app:layout_constraintTop_toBottomOf="@+id/txtView_sresult_score" />
 
     <TextView
-        android:id="@+id/txtView_hello3"
+        android:id="@+id/txtView_sresult_score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -148,7 +148,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtView_hello2" />
+        app:layout_constraintTop_toBottomOf="@+id/txtView_sresult_scoredesc" />
 
     <TextView
         android:id="@+id/txtView_finished"
@@ -159,7 +159,7 @@
         android:layout_marginTop="48dp"
         android:layout_marginEnd="27dp"
         android:layout_marginRight="27dp"
-        android:text="Finished!"
+        android:text="@string/sresult_header"
         android:textAlignment="center"
         android:textColor="@android:color/background_light"
         android:textSize="22sp"
@@ -169,7 +169,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ProgressBar
-        android:id="@+id/progressBar2"
+        android:id="@+id/progBar_srezult_stats"
         style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Large"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -179,5 +179,5 @@
         android:layout_marginRight="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtView_hello6" />
+        app:layout_constraintTop_toBottomOf="@+id/txtView_sresult_corectans" />
 </android.support.constraint.ConstraintLayout>

@@ -7,7 +7,7 @@
     tools:context=".RoleplayActivity">
 
         <TextView
-            android:id="@+id/txt_roleplay"
+            android:id="@+id/txtView_roleplay_header"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -24,17 +24,18 @@
             app:layout_constraintTop_toTopOf="parent">
 
         </TextView>
+
         <Button
-            android:id="@+id/btn_continue"
+            android:id="@+id/btn_roleplay_continue"
             android:layout_width="0dp"
-            android:layout_height="60dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginLeft="24dp"
             android:layout_marginEnd="24dp"
             android:layout_marginRight="24dp"
-            android:layout_marginBottom="24dp"
+            android:layout_marginBottom="25dp"
             android:background="@color/colorAccent"
-            android:text="@string/continue_button"
+            android:text="@string/btn_all_continue"
             android:textAlignment="center"
             android:textSize="20sp"
             app:fontFamily="@font/quicksand_bold"
@@ -44,7 +45,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <android.support.v7.widget.CardView
-            android:id="@+id/card_professor"
+            android:id="@+id/card_roleplay_teacher"
             android:layout_width="0dp"
             android:layout_height="144dp"
             android:layout_marginStart="24dp"
@@ -55,10 +56,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/card_teacher" >
+            app:layout_constraintTop_toBottomOf="@+id/card_roleplay_student">
 
                 <TextView
-                    android:id="@+id/textView4"
+                    android:id="@+id/txtView_roleplay_teacher"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="120dp"
@@ -69,7 +70,7 @@
                     app:fontFamily="@font/quicksand_bold" />
 
                 <TextView
-                    android:id="@+id/textView5"
+                    android:id="@+id/txtView_roleplay_teacher_extra1"
                     android:layout_width="192dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="120dp"
@@ -80,7 +81,7 @@
                     tools:text="@string/roleplay_teacher_extra1" />
 
                 <TextView
-                    android:id="@+id/textView6"
+                    android:id="@+id/txtView_roleplay_teacher_extra2"
                     android:layout_width="192dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="120dp"
@@ -91,16 +92,16 @@
                     tools:text="@string/roleplay_teacher_extra2" />
 
                 <ImageView
-                    android:id="@+id/imageView3"
+                    android:id="@+id/img_roleplay_teacher"
                     android:layout_width="72dp"
                     android:layout_height="match_parent"
+                    android:layout_marginLeft="24dp"
                     app:srcCompat="@drawable/ic_ill_teacher"
-                    tools:ignore="VectorDrawableCompat"
-                    android:layout_marginLeft="24dp"/>
+                    tools:ignore="VectorDrawableCompat" />
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
-            android:id="@+id/card_teacher"
+            android:id="@+id/card_roleplay_student"
             android:layout_width="0dp"
             android:layout_height="144dp"
             android:layout_marginStart="24dp"
@@ -111,10 +112,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt_roleplay">
+            app:layout_constraintTop_toBottomOf="@+id/txtView_roleplay_header">
 
                 <ImageView
-                    android:id="@+id/imageView2"
+                    android:id="@+id/img_roleplay_student"
                     android:layout_width="72dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="24dp"
@@ -123,7 +124,7 @@
                     tools:ignore="VectorDrawableCompat" />
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/txtView_phome_hello"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="120dp"
@@ -134,7 +135,7 @@
                     app:fontFamily="@font/quicksand_bold" />
 
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/txtView_roleplay_student_extra1"
                     android:layout_width="192dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="120dp"
@@ -145,7 +146,7 @@
                     tools:text="@string/roleplay_student_extra1" />
 
                 <TextView
-                    android:id="@+id/textView3"
+                    android:id="@+id/txtView_roleplay_student_extra2"
                     android:layout_width="192dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="120dp"

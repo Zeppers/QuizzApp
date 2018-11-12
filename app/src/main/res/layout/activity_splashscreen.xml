@@ -7,7 +7,7 @@
     tools:context=".SplashscreenActivity">
 
     <TextView
-        android:id="@+id/txt_splashscreen"
+        android:id="@+id/txtView_splashscreen_credits"
         android:layout_width="258dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"

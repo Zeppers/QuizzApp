@@ -14,7 +14,7 @@ public class RoleplayActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_roleplay);
 
-        Button button = findViewById(R.id.btn_continue);
+        Button button = findViewById(R.id.btn_roleplay_continue);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

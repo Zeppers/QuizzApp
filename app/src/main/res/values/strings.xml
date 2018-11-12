@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">QuizzApp</string>
-    <string name="continue_button">Continue</string>
+
+    <string name="btn_all_continue">Continue</string>
+    <string name="btn_any_retry">RETRY</string>
+    <string name="btn_any_submit">SUBMIT</string>
+    <string name="btn_any_start">START</string>
 
     <string name="splashscreen_txt">Designed and developed with love by <b>Zeppers</b></string>
 
@@ -34,7 +38,7 @@
     <string name="shome_question">   <u> Why do I need a code?</u>   </string>
     <string name="shome_code">code(ex: 23op53)</string>
 
-    <string name="squestion_questionNr">Question 1/20</string>
+    <string name="squestion_questionNr">Question</string>
 
 
     <string name="pquizdetail_head">Quiz detail</string>
@@ -46,5 +50,20 @@
     <string name="pquizdetail_timequest">Time/question</string>
     <string name="pquizdetail_noquest">No. questions</string>
     <string name="pquizdetail_seeall">See all questions and answers</string>
+
+    <string name="squizpreview_head">You\'ve entered room #</string>
+    <string name="squizpreview_desc_name">Quiz name</string>
+    <string name="squizpreview_desc_creator">Creator</string>
+    <string name="squizpreview_desc_time">Time/question</string>
+    <string name="squizpreview_desc_noquest">No. questions</string>
+    <string name="squizpreview_desc_description5">Description</string>
+    <string name="squizpreview_txt6">Start</string>
+    <string name="squizpreview_continue">Continue </string>
+
+    <string name="sresult_header">Finished!</string>
+    <string name="sresult_scoredesc">Your score is:</string>
+    <string name="sresult_corect">Corect</string>
+    <string name="sresult_wrong">Wrong</string>
+
 
 </resources>
