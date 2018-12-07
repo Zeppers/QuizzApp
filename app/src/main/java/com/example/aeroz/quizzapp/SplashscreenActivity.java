@@ -24,6 +24,7 @@ public class SplashscreenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splashscreen);
+
         Question q1 = new Question("Who was the first american in space?",new String[]{"Alan Shepard","Donald Trump","Marizio Tutti","Mariah Carey"},new int[]{0,1,2});
         Question q2 = new Question("Which planet is nearest the sun",new String[]{"the Moon","Jupiter","Venus","Mercur"},new int[]{0,2});
         Question q3 = new Question("Which devide was invented by Henry Mill", new String[]{"metal dildo","toothbrush","pen","typewriter"},new int[]{2});
@@ -34,7 +35,6 @@ public class SplashscreenActivity extends AppCompatActivity {
         questions1.add(q4);
         Quiz q = new Quiz("Science",questions1,240,true,true,"Alin");
         quizes.add(q);
-        Log.d("codul nostru este: :)",""+q.getCode());
 
         TakenQuiz takenQuiz1 = new TakenQuiz(q.getQuizName(),q.getQuestions(),q.getTime(),q.isActive(),q.isPrivat(),"Alin",3);
         takenQuiz1.chooseAnswers(q1,new int[]{0,1});
@@ -42,10 +42,6 @@ public class SplashscreenActivity extends AppCompatActivity {
         takenQuiz1.chooseAnswers(q3,new int[]{2});
         takenQuiz1.chooseAnswers(q4,new int[]{1,3});
 
-//        Log.d("pandaren", ""+takenQuiz1.getNoCorrectAnswers());
-//        Log.d("pandaren1", ""+takenQuiz1.getQuestions().size());
-//        Log.d("pandaren", ""+(takenQuiz1.getNoCorrectAnswers()/takenQuiz1.getQuestions().size()));
-        Log.d("pandaa", ""+takenQuiz1.calculateScore());
         Thread thread = new Thread(){
             @Override
 

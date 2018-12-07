@@ -16,7 +16,6 @@ public class TakenQuiz extends Quiz {
         this.chosenAnswers.add(ca);
         if(Util.arraysEqual(ca.chosenAnswers,question.getCorrectAnswers()))
             noCorrectAnswers++;
-
     }
 
     public List<ChosenAnswer> getChosenAnswers(){return this.chosenAnswers;}
