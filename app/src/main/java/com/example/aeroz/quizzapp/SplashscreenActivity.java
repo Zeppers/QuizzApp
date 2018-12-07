@@ -23,7 +23,7 @@ public class SplashscreenActivity extends AppCompatActivity {
         questions1.add(new Question("Which planet is nearest the sun",new String[]{"the Moon","Jupiter","Venus","Mercur"},new int[]{3}));
         questions1.add(new Question("Which devide was invented by Henry Mill", new String[]{"metal dildo","toothbrush","pen","typewriter"},new int[]{3}));
         questions1.add(new Question("Which unit indicate the light intensity?",new String[]{"bar","ohm","amper","candela"},new int[]{3}));
-        Quiz q = new Quiz("Science",questions1,240,true,true);
+        Quiz q = new Quiz("Science",questions1,240,true,true,"Alin");
         quizes.add(q);
         Log.d("codul nostru este: :)",""+q.getCode());
 

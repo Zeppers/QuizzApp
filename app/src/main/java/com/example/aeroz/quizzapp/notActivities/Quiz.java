@@ -15,10 +15,11 @@ public class Quiz {
     protected boolean active;
     protected boolean privat;
     protected long code;
+    protected String creator;
 
     public Quiz(){}
 
-    public Quiz(String quizName, List<Question> questions, int time, boolean active, boolean privat){
+    public Quiz(String quizName, List<Question> questions, int time, boolean active, boolean privat, String creator){
         this.quizName = quizName;
         this.questions = questions;
         this.time = time;
@@ -30,6 +31,7 @@ public class Quiz {
                 this.code = new Random().nextInt(9000)+1001;
             }
         }
+        this.creator = creator;
     }
 
     public String getQuizName(){return this.quizName;}
@@ -53,5 +55,6 @@ public class Quiz {
 
     public void addQuestion(Question q){this.questions.add(q);}
 
-
+    public String getCreator(){return this.creator;}
+    public void setCreator(String value){this.creator = value;}
 }
