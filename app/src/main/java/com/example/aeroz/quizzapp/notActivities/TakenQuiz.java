@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TakenQuiz extends Quiz {
+
     private int remainingTries;
     private List<ChosenAnswer> chosenAnswers = new ArrayList<>();
     private int noCorrectAnswers = 0;
@@ -21,7 +22,7 @@ public class TakenQuiz extends Quiz {
     public List<ChosenAnswer> getChosenAnswers(){return this.chosenAnswers;}
 
     public float calculateScore(){
-        return (float)noCorrectAnswers/questions.size();
+        return (float)noCorrectAnswers/questions.size()*100;
     }
     public int getNoCorrectAnswers(){return this.noCorrectAnswers;}
 }

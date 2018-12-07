@@ -66,4 +66,13 @@
     <string name="sresult_wrong">Wrong</string>
 
 
+    <string name="onboarding_slide_1_title">Welcome to QuizApp</string>
+    <string name="onboarding_slide_1_paragraph">This application will be your tool for taking quizzes <b>more easily.</b></string>
+
+    <string name="onboarding_slide_2_title">If you are a student...</string>
+    <string name="onboarding_slide_2_paragraph">You can easily take a quiz, see your result and retry up to 3 times until you improve your results.</string>
+
+    <string name="onboarding_slide_3_title">If you are a teacher...</string>
+    <string name="onboarding_slide_3_paragraph">Creating quizzes and managing results will be a pleasureble activity now.</string>
+
 </resources>
