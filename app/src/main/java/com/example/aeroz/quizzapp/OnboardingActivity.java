@@ -22,6 +22,7 @@ import org.w3c.dom.Text;
 
 
 public class OnboardingActivity extends AppCompatActivity {
+    public static OnboardingActivity ctx;
 
     public ViewPager viewPager;
     public LinearLayout mDotLayout;

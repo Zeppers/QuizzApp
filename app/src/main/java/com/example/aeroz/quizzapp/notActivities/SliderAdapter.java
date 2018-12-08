@@ -17,29 +17,27 @@ import com.example.aeroz.quizzapp.R;
 import com.example.aeroz.quizzapp.SplashscreenActivity;
 
 public class SliderAdapter extends PagerAdapter {
-    Context context;
-    LayoutInflater layoutInflater;
+    private Context context;
+    private LayoutInflater layoutInflater;
 
-    public SliderAdapter(Context context){
-        this.context = context;
-    }
+    private String[] slideHeadings;
+    private String[] slideDescriptions;
 
-    public String[] slideHeadings = {
-            "heading1",
-            "heading2",
-            "heading3"
-    };
-    public String[] slideDescriptions = {
-            "desc1",
-            "desc2",
-            "desc3"
-    };
-
-    public int[] slideIcons = {
+    private int[] slideIcons = {
             R.drawable.onboarding_ill1,
             R.drawable.onboarding_ill2,
             R.drawable.onboarding_ill3
     };
+
+    public SliderAdapter(Context context){
+        this.context = context;
+        this.slideHeadings = new String[]{
+          context.getString(R.string.onboarding_slide_1_title), context.getString(R.string.onboarding_slide_2_title), context.getString(R.string.onboarding_slide_3_title)
+        };
+        this.slideDescriptions = new String[]{
+                context.getString(R.string.onboarding_slide_1_paragraph), context.getString(R.string.onboarding_slide_2_paragraph), context.getString(R.string.onboarding_slide_3_paragraph)
+        };
+    }
 
     @Override
     public int getCount() {
