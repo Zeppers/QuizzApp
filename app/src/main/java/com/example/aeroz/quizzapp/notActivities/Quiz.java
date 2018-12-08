@@ -4,11 +4,12 @@ import android.widget.ListView;
 
 import com.example.aeroz.quizzapp.SplashscreenActivity;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Quiz {
+public class Quiz implements Serializable {
     protected String quizName;
     protected List<Question> questions = new ArrayList<>();
     protected int time;

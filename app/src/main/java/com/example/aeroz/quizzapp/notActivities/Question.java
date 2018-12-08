@@ -1,6 +1,8 @@
 package com.example.aeroz.quizzapp.notActivities;
 
-public class Question {
+import java.io.Serializable;
+
+public class Question implements Serializable {
     private String questionText;
     private String[] answers;
     private int[] correctAnswers;

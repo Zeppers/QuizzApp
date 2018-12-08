@@ -63,9 +63,7 @@ public class SplashscreenActivity extends AppCompatActivity {
 
         teachers.add(new Teacher("Boja Catalin","bojacatalin@ie.ase.ro","password1"));
         teachers.add(new Teacher("Toma Andrei","tomaandrei@ie.ase.ro","password2"));
-
-
-
+        teachers.add(new Teacher("Testescu Testulici","test@ie.ase.ro","password3",quizes));
 
         Thread thread = new Thread(){
             @Override

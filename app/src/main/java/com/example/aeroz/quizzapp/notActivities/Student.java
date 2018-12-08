@@ -1,9 +1,10 @@
 package com.example.aeroz.quizzapp.notActivities;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Student {
+public class Student implements Serializable {
     private String name;
     private String email;
     private String password;

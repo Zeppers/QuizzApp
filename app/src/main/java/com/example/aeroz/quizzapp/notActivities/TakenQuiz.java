@@ -1,9 +1,10 @@
 package com.example.aeroz.quizzapp.notActivities;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TakenQuiz extends Quiz {
+public class TakenQuiz extends Quiz implements Serializable {
 
     private int remainingTries;
     private List<ChosenAnswer> chosenAnswers = new ArrayList<>();
