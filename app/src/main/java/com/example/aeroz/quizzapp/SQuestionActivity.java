@@ -22,13 +22,9 @@ public class SQuestionActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("mytag123", "onClick: "+i);
-                if(i>0){
-                    startActivity(new Intent(getBaseContext(),SQuestionActivity.class));
+                if(i>0)
                     i--;
-                }
-                else
-                    startActivity(new Intent(getBaseContext(),SResultActivity.class));
+                startActivity(new Intent(SQuestionActivity.this,SResultActivity.class));
             }
         });
     }

@@ -23,9 +23,9 @@ public class SigninActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(editTextEmail.getText().toString().contains("stud"))
-                    startActivity(new Intent(getBaseContext(),SHomeActivity.class));
+                    startActivity(new Intent(SigninActivity.this,SHomeActivity.class));
                 else
-                    startActivity(new Intent(getBaseContext(),PHomeActivity.class));
+                    startActivity(new Intent(SigninActivity.this,PHomeActivity.class));
             }
         });
     }

@@ -26,6 +26,7 @@ public class SplashscreenActivity extends AppCompatActivity {
 
     public static List<Student> students = new ArrayList<>();
     public static List<Teacher> teachers = new ArrayList<>();
+    public static List<Quiz> quizes = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +35,7 @@ public class SplashscreenActivity extends AppCompatActivity {
 
         List<Question> questions1 = new ArrayList<>();
         List<Question> questions2 = new ArrayList<>();
-        List<Quiz> quizes = new ArrayList<>();
+
         Question q1 = new Question("Who was the first american in space?",new String[]{"Alan Shepard","Donald Trump","Marizio Tutti","Mariah Carey"},new int[]{0,1,2});
         Question q2 = new Question("Which planet is nearest the sun",new String[]{"the Moon","Jupiter","Venus","Mercur"},new int[]{0,2});
         Question q3 = new Question("Which device was invented by Henry Mill", new String[]{"metal dildo","toothbrush","pen","typewriter"},new int[]{2});
@@ -54,6 +55,7 @@ public class SplashscreenActivity extends AppCompatActivity {
 
         Quiz quiz1 = new Quiz("Science",questions1,240,true,true,"Alin");
         Quiz quiz2 = new Quiz("Literature and arts",questions2,240,true,true,"Marian");
+        quizes.add(quiz1);quizes.add(quiz2);
 
         students.add(new Student("Petre Cosmin","petrecosmin16@stud.ase.ro","password1"));
         students.add(new Student("Niculae Andreea","niculaeandreea16@stud.ase.ro","password2"));

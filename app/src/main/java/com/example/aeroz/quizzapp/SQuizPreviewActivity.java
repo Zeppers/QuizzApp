@@ -19,7 +19,7 @@ public class SQuizPreviewActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getBaseContext(),SQuestionActivity.class));
+                startActivity(new Intent(SQuizPreviewActivity.this,SQuestionActivity.class));
             }
         });
     }

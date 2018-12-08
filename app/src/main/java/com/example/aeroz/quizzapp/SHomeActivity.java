@@ -27,7 +27,7 @@ public class SHomeActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getBaseContext(),SQuizPreviewActivity.class));
+                startActivity(new Intent(SHomeActivity.this,SQuizPreviewActivity.class));
             }
         });
     }
