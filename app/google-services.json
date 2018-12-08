@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "842643754711",
+    "firebase_url": "https://d2r2ishuman.firebaseio.com",
+    "project_id": "d2r2ishuman",
+    "storage_bucket": "d2r2ishuman.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:842643754711:android:8866475ed805f979",
+        "android_client_info": {
+          "package_name": "com.example.aeroz.quizzapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "842643754711-qq9ejcu51gisfb7e67degdthhnq0hj9i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.aeroz.quizzapp",
+            "certificate_hash": "93d2789e8e9b289406631fee96f2555f278874ea"
+          }
+        },
+        {
+          "client_id": "842643754711-l464gm4q2v4oukqrlubh7mg9lmhfbjt2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7-JdwHzoty-c38UQ1CfvwrzAwdn-xsfU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "842643754711-l464gm4q2v4oukqrlubh7mg9lmhfbjt2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

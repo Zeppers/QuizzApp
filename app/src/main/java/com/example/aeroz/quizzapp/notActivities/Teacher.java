@@ -6,11 +6,19 @@ import java.util.List;
 public class Teacher {
     private String name;
     private String email;
+    private String password;
     private List<Quiz> quizes = new ArrayList<>();
 
-    public Teacher(String name, String email, List<Quiz> quizes){
+    public Teacher(String name, String email, String password){
         this.name = name;
         this.email = email;
+        this.password = password;
+    }
+
+    public Teacher(String name, String email, String password, List<Quiz> quizes){
+        this.name = name;
+        this.email = email;
+        this.password = password;
         this.quizes = quizes;
     }
 

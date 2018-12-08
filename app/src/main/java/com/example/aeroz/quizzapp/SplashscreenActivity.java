@@ -1,6 +1,7 @@
 package com.example.aeroz.quizzapp;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -8,24 +9,32 @@ import android.util.Log;
 import com.example.aeroz.quizzapp.notActivities.ChosenAnswer;
 import com.example.aeroz.quizzapp.notActivities.Question;
 import com.example.aeroz.quizzapp.notActivities.Quiz;
+import com.example.aeroz.quizzapp.notActivities.Student;
 import com.example.aeroz.quizzapp.notActivities.TakenQuiz;
+import com.example.aeroz.quizzapp.notActivities.Teacher;
 import com.example.aeroz.quizzapp.notActivities.Util;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class SplashscreenActivity extends AppCompatActivity {
 
-
-    public static List<Quiz> quizes = new ArrayList<>();
-    public static List<Question> questions1 = new ArrayList<>();
-    public static List<Question> questions2=new ArrayList<>();
+    public static List<Student> students = new ArrayList<>();
+    public static List<Teacher> teachers = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splashscreen);
 
+        List<Question> questions1 = new ArrayList<>();
+        List<Question> questions2 = new ArrayList<>();
+        List<Quiz> quizes = new ArrayList<>();
         Question q1 = new Question("Who was the first american in space?",new String[]{"Alan Shepard","Donald Trump","Marizio Tutti","Mariah Carey"},new int[]{0,1,2});
         Question q2 = new Question("Which planet is nearest the sun",new String[]{"the Moon","Jupiter","Venus","Mercur"},new int[]{0,2});
         Question q3 = new Question("Which device was invented by Henry Mill", new String[]{"metal dildo","toothbrush","pen","typewriter"},new int[]{2});
@@ -34,40 +43,25 @@ public class SplashscreenActivity extends AppCompatActivity {
         questions1.add(q2);
         questions1.add(q3);
         questions1.add(q4);
-        Quiz q = new Quiz("Science",questions1,240,true,true,"Alin");
-        quizes.add(q);
-        //Log.d("codul nostru este: :)",""+q.getCode());
-
-        TakenQuiz takenQuiz1 = new TakenQuiz(q.getQuizName(),q.getQuestions(),q.getTime(),q.isActive(),q.isPrivat(),"Alin",3);
-        takenQuiz1.chooseAnswers(q1,new int[]{0,1});
-        takenQuiz1.chooseAnswers(q2,new int[]{0});
-        takenQuiz1.chooseAnswers(q3,new int[]{2});
-        takenQuiz1.chooseAnswers(q4,new int[]{1,3});
-
-//        Log.d("pandaren", ""+takenQuiz1.getNoCorrectAnswers());
-//        Log.d("pandaren1", ""+takenQuiz1.getQuestions().size());
-//        Log.d("pandaren", ""+(takenQuiz1.getNoCorrectAnswers()/takenQuiz1.getQuestions().size()));
-        Log.d("pandaa", ""+takenQuiz1.calculateScore());
-
         Question q5 = new Question("How was Sumitra's nature?",new String[]{"Calm","Nature","Fierce","Clever"},new int[]{0,3});
         Question q6 = new Question("Who is the author of Lord of the Flies?",new String[]{"William Golding","Aldous Huxley","Sir Arthur Conan Doyle","Dana Marijuana"},new int[]{1,2});
         Question q7 = new Question("Who is the author of Life on the Mississippi?",new String[]{"James Joyce","Graham Greene","Mark Twain","Petre Ispirescu"},new int[]{0});
         Question q8 = new Question("Which of the following is a not a play?",new String[]{"Pygmalion","A Doll’s House","Jane Austen","The Tempest"},new int[]{1});
-
         questions2.add(q5);
         questions2.add(q6);
         questions2.add(q7);
         questions2.add(q8);
 
-        Quiz p = new Quiz("Literature and arts",questions2,240,true,true,"Marian");
+        Quiz quiz1 = new Quiz("Science",questions1,240,true,true,"Alin");
+        Quiz quiz2 = new Quiz("Literature and arts",questions2,240,true,true,"Marian");
 
-        quizes.add(p);
-        TakenQuiz takenQuiz2 = new TakenQuiz(p.getQuizName(),p.getQuestions(),p.getTime(),p.isActive(),p.isPrivat(),"Marian",2);
+        students.add(new Student("Petre Cosmin","petrecosmin16@stud.ase.ro","password1"));
+        students.add(new Student("Niculae Andreea","niculaeandreea16@stud.ase.ro","password2"));
+        students.add(new Student("Paun Diana","paundiana16@stud.ase.ro","password3"));
 
-        takenQuiz2.chooseAnswers(q5,new int[]{0,3});
-        takenQuiz2.chooseAnswers(q6,new int[]{1,2});
-        takenQuiz2.chooseAnswers(q7,new int[]{0});
-        takenQuiz2.chooseAnswers(q8,new int[]{1});
+        teachers.add(new Teacher("Boja Catalin","bojacatalin@ie.ase.ro","password1"));
+        teachers.add(new Teacher("Toma Andrei","tomaandrei@ie.ase.ro","password2"));
+
 
 
 
@@ -85,10 +79,6 @@ public class SplashscreenActivity extends AppCompatActivity {
                 };
 
         thread.start();
-
-        Log.d("pandaa", ""+takenQuiz2.calculateScore());
-
-
     }
 
     public static boolean codeExists(long code,List<Quiz> list){
