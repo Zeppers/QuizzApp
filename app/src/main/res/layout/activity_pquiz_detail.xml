@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PQuizDetailActivity">
+    android:fillViewport="true">
 
-    <!--<android.support.v7.widget.CardView-->
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".PQuizDetailActivity">
+
+
+        <!--<android.support.v7.widget.CardView-->
         <!--android:id="@+id/cardView2"-->
         <!--android:layout_width="0dp"-->
         <!--android:layout_height="61dp"-->
@@ -15,16 +24,16 @@
         <!--app:layout_constraintTop_toTopOf="parent">-->
 
         <!--<TextView-->
-            <!--android:id="@+id/textView8"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_marginTop="18dp"-->
-            <!--android:text="@string/pquizdetail_head"-->
-            <!--android:textAlignment="center"-->
-            <!--android:textSize="22sp" />-->
-    <!--</android.support.v7.widget.CardView>-->
+        <!--android:id="@+id/textView8"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="18dp"-->
+        <!--android:text="@string/pquizdetail_head"-->
+        <!--android:textAlignment="center"-->
+        <!--android:textSize="22sp" />-->
+        <!--</android.support.v7.widget.CardView>-->
 
-    <!--<TextView-->
+        <!--<TextView-->
         <!--android:id="@+id/textView9"-->
         <!--android:layout_width="wrap_content"-->
         <!--android:layout_height="wrap_content"-->
@@ -36,7 +45,7 @@
         <!--app:layout_constraintStart_toStartOf="parent"-->
         <!--app:layout_constraintTop_toBottomOf="@+id/cardView2" />-->
 
-    <!--<TextView-->
+        <!--<TextView-->
         <!--android:id="@+id/textView10"-->
         <!--android:layout_width="wrap_content"-->
         <!--android:layout_height="wrap_content"-->
@@ -48,7 +57,7 @@
         <!--app:layout_constraintStart_toStartOf="parent"-->
         <!--app:layout_constraintTop_toBottomOf="@+id/textView9" />-->
 
-    <!--<TextView-->
+        <!--<TextView-->
         <!--android:id="@+id/textView11"-->
         <!--android:layout_width="wrap_content"-->
         <!--android:layout_height="wrap_content"-->
@@ -60,7 +69,7 @@
         <!--app:layout_constraintStart_toStartOf="parent"-->
         <!--app:layout_constraintTop_toBottomOf="@+id/textView10" />-->
 
-    <!--<TextView-->
+        <!--<TextView-->
         <!--android:id="@+id/textView12"-->
         <!--android:layout_width="wrap_content"-->
         <!--android:layout_height="wrap_content"-->
@@ -72,7 +81,7 @@
         <!--app:layout_constraintStart_toStartOf="parent"-->
         <!--app:layout_constraintTop_toBottomOf="@+id/textView11" />-->
 
-    <!--<android.support.v7.widget.CardView-->
+        <!--<android.support.v7.widget.CardView-->
         <!--android:id="@+id/cardView4"-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="69dp"-->
@@ -82,16 +91,16 @@
         <!--app:layout_constraintTop_toBottomOf="@+id/textView12">-->
 
         <!--<TextView-->
-            <!--android:id="@+id/textView13"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:layout_marginLeft="90dp"-->
+        <!--android:id="@+id/textView13"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_marginLeft="90dp"-->
 
-            <!--android:text="@string/pquizdetail_info"-->
-            <!--android:textSize="16sp" />-->
-    <!--</android.support.v7.widget.CardView>-->
+        <!--android:text="@string/pquizdetail_info"-->
+        <!--android:textSize="16sp" />-->
+        <!--</android.support.v7.widget.CardView>-->
 
-    <!--<TextView-->
+        <!--<TextView-->
         <!--android:id="@+id/textView14"-->
         <!--android:layout_width="wrap_content"-->
         <!--android:layout_height="wrap_content"-->
@@ -103,7 +112,7 @@
         <!--app:layout_constraintStart_toStartOf="parent"-->
         <!--app:layout_constraintTop_toBottomOf="@+id/cardView4" />-->
 
-    <!--<TextView-->
+        <!--<TextView-->
         <!--android:id="@+id/textView15"-->
         <!--android:layout_width="wrap_content"-->
         <!--android:layout_height="wrap_content"-->
@@ -115,7 +124,7 @@
         <!--app:layout_constraintStart_toStartOf="parent"-->
         <!--app:layout_constraintTop_toBottomOf="@+id/textView14" />-->
 
-    <!--<TextView-->
+        <!--<TextView-->
         <!--android:id="@+id/textView16"-->
         <!--android:layout_width="wrap_content"-->
         <!--android:layout_height="wrap_content"-->
@@ -127,7 +136,7 @@
         <!--app:layout_constraintStart_toStartOf="parent"-->
         <!--app:layout_constraintTop_toBottomOf="@+id/textView15" />-->
 
-    <!--<TextView-->
+        <!--<TextView-->
         <!--android:id="@+id/textView17"-->
         <!--android:layout_width="wrap_content"-->
         <!--android:layout_height="wrap_content"-->
@@ -139,7 +148,7 @@
         <!--app:layout_constraintEnd_toEndOf="parent"-->
         <!--app:layout_constraintTop_toBottomOf="@+id/textView15" />-->
 
-    <!--<TextView-->
+        <!--<TextView-->
         <!--android:id="@+id/textView18"-->
         <!--android:layout_width="wrap_content"-->
         <!--android:layout_height="wrap_content"-->
@@ -151,7 +160,7 @@
         <!--app:layout_constraintStart_toStartOf="parent"-->
         <!--app:layout_constraintTop_toBottomOf="@+id/textView16" />-->
 
-    <!--<TextView-->
+        <!--<TextView-->
         <!--android:id="@+id/textView19"-->
         <!--android:layout_width="wrap_content"-->
         <!--android:layout_height="wrap_content"-->
@@ -163,7 +172,7 @@
         <!--app:layout_constraintEnd_toEndOf="parent"-->
         <!--app:layout_constraintTop_toBottomOf="@+id/textView17" />-->
 
-    <!--<android.support.v7.widget.CardView-->
+        <!--<android.support.v7.widget.CardView-->
         <!--android:layout_width="0dp"-->
         <!--android:layout_height="30dp"-->
         <!--android:layout_marginTop="24dp"-->
@@ -172,12 +181,308 @@
         <!--app:layout_constraintTop_toBottomOf="@+id/textView19" >-->
 
         <!--<TextView-->
-            <!--android:id="@+id/textView20"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="TextView"-->
-            <!--android:textSize="16sp"-->
-            <!--android:layout_marginLeft="90dp"-->
-            tools:text="@string/pquizdetail_seeall" />
-    <!--</android.support.v7.widget.CardView>-->
-</android.support.constraint.ConstraintLayout>
+        <!--android:id="@+id/textView20"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="TextView"-->
+        <!--android:textSize="16sp"-->
+        <!--android:layout_marginLeft="90dp"-->
+        tools:text="@string/pquizdetail_seeall" />
+        <!--</android.support.v7.widget.CardView>-->
+
+
+        <TextView
+            android:id="@+id/txtView_pquizdetail_data_creation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginLeft="48dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="48dp"
+            android:layout_marginRight="48dp"
+            android:text="@string/pquizdetail_data1"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="14sp"
+            android:textStyle="italic"
+            app:fontFamily="@font/quicksand_light"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtView_pquizdetail_quizname_dynamic" />
+
+        <TextView
+            android:id="@+id/txtView_pquizdetail_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:text="@string/pquizdetail_desc"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="18sp"
+            app:fontFamily="@font/quicksand_light"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtView_pquizdetail_information" />
+
+        <TextView
+            android:id="@+id/txtView_pquizdetail_information"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:text="@string/pquizdetail_info"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="14sp"
+            app:fontFamily="@font/quicksand_light"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imgView_pquizdetail_info"
+            app:layout_constraintTop_toBottomOf="@+id/txtView_pquizdetail_data_expiration" />
+
+        <TextView
+            android:id="@+id/txtView_pquizdetail_timeperquestion_dynamic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:text="30 seconds"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="18sp"
+            app:fontFamily="@font/quicksand_regular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtView_pquizdetail_timeperquestion" />
+
+        <ImageView
+            android:id="@+id/imgView_pquizdetail_info"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtView_pquizdetail_data_expiration"
+            app:srcCompat="@drawable/ic_informations" />
+
+        <ImageView
+            android:id="@+id/ic_pquizdetail_back"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_back" />
+
+        <TextView
+            android:id="@+id/txtView_pquizdetail_noquestions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:text="@string/pquizdetail_noquest"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="18sp"
+            app:fontFamily="@font/quicksand_light"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtView_pquizdetail_description_dynamic" />
+
+        <TextView
+            android:id="@+id/txtView_pquizdetail_description_dynamic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:text="Every student from 1073 must complete this quiz to have a chance in exam"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="18sp"
+            app:fontFamily="@font/quicksand_regular"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtView_pquizdetail_description" />
+
+        <TextView
+            android:id="@+id/txtView_pquizdetail_timeperquestion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="32dp"
+            android:text="@string/pquizdetail_timequest"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="18sp"
+            app:fontFamily="@font/quicksand_light"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtView_pquizdetail_description_dynamic" />
+
+        <TextView
+            android:id="@+id/txtView_pquizdetail_statistics_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="32dp"
+            android:text="@string/pquizdetail_statistics_title"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="18sp"
+            app:fontFamily="@font/quicksand_light"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtView_pquizdetail_noquestions_dynamic2" />
+
+        <TextView
+            android:id="@+id/txtView_pquizdetail_statistics_title2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/pquizdetail_statistics_nocommits"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="14sp"
+            android:textStyle="italic"
+            app:fontFamily="@font/quicksand_light"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtView_pquizdetail_statistics_title" />
+
+        <TextView
+            android:id="@+id/txtView_pquizdetail_statistics_nocommints_dynamic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="32dp"
+            android:text="12 students (by now)"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:fontFamily="@font/quicksand_light"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtView_pquizdetail_statistics_title2" />
+
+        <TextView
+            android:id="@+id/txtView_pquizdetail_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:text="@string/pquizdetail_head"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="22sp"
+            app:fontFamily="@font/quicksand_bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtView_pquizdetail_quizname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:text="@string/pquizdetail_quizname"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="18sp"
+            app:fontFamily="@font/quicksand_light"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtView_pquizdetail_header" />
+
+        <TextView
+            android:id="@+id/txtView_pquizdetail_quizname_dynamic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:text="OOP Programming Quiz "
+            android:textColor="@android:color/darker_gray"
+            android:textSize="18sp"
+            app:fontFamily="@font/quicksand_bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtView_pquizdetail_quizname" />
+
+        <TextView
+            android:id="@+id/txtView_pquizdetail_data_expiration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginLeft="48dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="48dp"
+            android:layout_marginRight="48dp"
+            android:text="@string/pquizdetail_data2"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="14sp"
+            android:textStyle="italic"
+            app:fontFamily="@font/quicksand_light"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtView_pquizdetail_data_creation" />
+
+        <TextView
+            android:id="@+id/txtView_pquizdetail_noquestions_dynamic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:text="24 questions"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="18sp"
+            app:fontFamily="@font/quicksand_regular"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtView_pquizdetail_noquestions" />
+
+        <TextView
+            android:id="@+id/txtView_pquizdetail_noquestions_dynamic2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:text="@string/pquizdetail_seeall"
+            android:textAllCaps="false"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="18sp"
+            app:fontFamily="@font/quicksand_bold"
+            app:layout_constraintEnd_toStartOf="@+id/imgView_pquizdetail_ic_seeall"
+            app:layout_constraintTop_toBottomOf="@+id/txtView_pquizdetail_noquestions_dynamic" />
+
+        <ImageView
+            android:id="@+id/imgView_pquizdetail_ic_seeall"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtView_pquizdetail_noquestions_dynamic"
+            app:srcCompat="@drawable/ic_right_arrow" />
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

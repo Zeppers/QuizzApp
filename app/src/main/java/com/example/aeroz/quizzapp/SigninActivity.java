@@ -1,12 +1,14 @@
 package com.example.aeroz.quizzapp;
 
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.aeroz.quizzapp.notActivities.Dialog;
 import com.example.aeroz.quizzapp.notActivities.Student;
 import com.example.aeroz.quizzapp.notActivities.Teacher;
 
@@ -14,6 +16,7 @@ public class SigninActivity extends AppCompatActivity {
 
     public EditText editTextEmail;
     public EditText editTextPassword;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,9 +38,10 @@ public class SigninActivity extends AppCompatActivity {
                                 startActivity(new Intent(SigninActivity.this,SHomeActivity.class).putExtra("student",s));
                                 break;
                             }
-                            //else password incorrect
+                            showDialog();
+
                         }
-                        //else doesnt exist
+                        showDialog();
                     }
 
 
@@ -49,13 +53,26 @@ public class SigninActivity extends AppCompatActivity {
                                 startActivity(new Intent(SigninActivity.this,PHomeActivity.class).putExtra("teacher",t));
                                 break;
                             }
-                            //else password incorrect
+                            showDialog();
                         }
-                        //else doesnt exist
+                        showDialog();
                     }
                 }
-                //else input incorect
+                showDialog();
             }
-        });
+        }
+
+        );
+
+
+
+
     }
+
+    public void showDialog()
+    {
+        Dialog errorDialog=new Dialog();
+        errorDialog.show(getSupportFragmentManager(),"errorDialog");
+    }
+
 }

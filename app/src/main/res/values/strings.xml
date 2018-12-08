@@ -43,13 +43,15 @@
 
     <string name="pquizdetail_head">Quiz detail</string>
     <string name="pquizdetail_quizname">Quiz name</string>
-    <string name="pquizdetail_data1">Created on</string>
-    <string name="pquizdetail_data2">Expires on</string>
-    <string name="pquizdetail_info">When expires, you\'ll receive a full report of all results and commits to this quizz on your email address</string>
+    <string name="pquizdetail_data1">Created on 12th december of 2018</string>
+    <string name="pquizdetail_data2">Expires on 20th december of 2018</string>
+    <string name="pquizdetail_info">When expires, you\'ll receive a full report of all results and commits to this quiz on your email address</string>
     <string name="pquizdetail_desc">Description</string>
     <string name="pquizdetail_timequest">Time/question</string>
     <string name="pquizdetail_noquest">No. questions</string>
     <string name="pquizdetail_seeall">See all questions and answers</string>
+    <string name="pquizdetail_statistics_title">Statistics</string>
+    <string name="pquizdetail_statistics_nocommits">Number of commits</string>
 
     <string name="squizpreview_head">You\'ve entered room #</string>
     <string name="squizpreview_desc_name">Quiz name</string>
