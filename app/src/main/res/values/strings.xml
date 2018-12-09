@@ -2,19 +2,27 @@
     <string name="app_name">QuizzApp</string>
 
     <string name="btn_all_continue">Continue</string>
-    <string name="btn_any_retry">RETRY</string>
-    <string name="btn_any_submit">SUBMIT</string>
-    <string name="btn_any_start">START</string>
+    <string name="btn_any_retry">Retry</string>
+    <string name="btn_any_submit">Submit</string>
+    <string name="btn_any_start">Start</string>
+    <string name="btn_all_logout">Log out</string>
+    <string name="btn_professor_create_quiz">Create quiz</string>
 
     <string name="splashscreen_txt">Designed and developed with love by <b>Zeppers</b></string>
+
+
+    <string name="onboarding_slide_1_title">Welcome to QuizApp</string>
+    <string name="onboarding_slide_1_paragraph">This application will be your tool for taking quizzes <b>more easily.</b></string>
+    <string name="onboarding_slide_2_title">If you are a student...</string>
+    <string name="onboarding_slide_2_paragraph">You can easily take a quiz, see your result and retry up to 3 times until you improve your results.</string>
+    <string name="onboarding_slide_3_title">If you are a teacher...</string>
+    <string name="onboarding_slide_3_paragraph">Creating quizzes and managing results will be a pleasureble activity now.</string>
 
 
     <string name="roleplay_introd">Before joining us, please tell us if you are <b>a teacher or a student</b></string>
     <string name="roleplay_teacher">TEACHER</string>
     <string name="roleplay_teacher_extra1">create and manage quizzes</string>
     <string name="roleplay_teacher_extra2">analyze results and ranking</string>
-
-
     <string name="roleplay_student">STUDENT</string>
     <string name="roleplay_student_extra1">take quizzes</string>
     <string name="roleplay_student_extra2">
@@ -29,16 +37,22 @@
     <string name="phome_create_quiz">+Create Quiz</string>
     <string name="phome_introd">Hello, professor!</string>
     <string name="phome_public_quizzes">Public quizzes</string>
+    <string name="phome_public_quizzes_seeall">See all public quizzes</string>
     <string name="phome_private_quizzes">Private quizzes</string>
+    <string name="phome_private_quizzes_seeall">See all private quizzes</string>
     <string name="phome_all_public">All the public quizzes</string>
     <string name="phome_all_private">All the private quizzes</string>
+    <string name="phome_introd_text">These are the quizzes created by now. To see more information, <b>check your profile.</b></string>
 
-    <string name="shome_introd">Hello, student!</string>
-    <string name="shome_explain">To take a quiz you need to type down a code </string>
-    <string name="shome_question">   <u> Why do I need a code?</u>   </string>
-    <string name="shome_code">code(ex: 23op53)</string>
+    <string name="pprofile_head">Your profile</string>
+    <string name="pprofile_statistics">By now, you as a teacher have created:</string>
+    <string name="pprofile_inactive_quizzes">Inactive quizzes <i>(drafts)</i></string>
 
-    <string name="squestion_questionNr">Question</string>
+    <string name="pcreatequiz_head">Create quiz</string>
+    <string name="pcreatequiz_quizname">Quiz name</string>
+    <string name="pcreatequiz_description">Description</string>
+    <string name="pcreatequiz_questions">Questions</string>
+
 
 
     <string name="pquizdetail_head">Quiz detail</string>
@@ -53,12 +67,26 @@
     <string name="pquizdetail_statistics_title">Statistics</string>
     <string name="pquizdetail_statistics_nocommits">Number of commits</string>
 
+
+    <string name="shome_introd">Hello, student!</string>
+    <string name="shome_explain">To take a quiz you need to type down a code </string>
+    <string name="shome_question">   <u> Why do I need a code?</u>   </string>
+    <string name="shome_code">code(ex: 23op53)</string>
+
+    <string name="squestion_questionNr">Question</string>
+
+
+    <string name="sprofile_head">Your profile</string>
+    <string name="sprofile_score">Based on the results by now, your <b>average score</b> is:</string>
+    <string name="sprofile_quizhistory">Quiz history <b>(6 results available)</b></string>
+
+
     <string name="squizpreview_head">You\'ve entered room #</string>
     <string name="squizpreview_desc_name">Quiz name</string>
     <string name="squizpreview_desc_creator">Creator</string>
     <string name="squizpreview_desc_time">Time/question</string>
     <string name="squizpreview_desc_noquest">No. questions</string>
-    <string name="squizpreview_desc_description5">Description</string>
+    <string name="squizpreview_desc_description">Description</string>
     <string name="squizpreview_txt6">Start</string>
     <string name="squizpreview_continue">Continue </string>
 
@@ -68,13 +96,6 @@
     <string name="sresult_wrong">Wrong</string>
 
 
-    <string name="onboarding_slide_1_title">Welcome to QuizApp</string>
-    <string name="onboarding_slide_1_paragraph">This application will be your tool for taking quizzes <b>more easily.</b></string>
 
-    <string name="onboarding_slide_2_title">If you are a student...</string>
-    <string name="onboarding_slide_2_paragraph">You can easily take a quiz, see your result and retry up to 3 times until you improve your results.</string>
-
-    <string name="onboarding_slide_3_title">If you are a teacher...</string>
-    <string name="onboarding_slide_3_paragraph">Creating quizzes and managing results will be a pleasureble activity now.</string>
 
 </resources>

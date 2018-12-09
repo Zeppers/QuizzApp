@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     tools:context=".SQuizPreviewActivity">
 
     <!--<ImageView-->
@@ -166,7 +167,7 @@
     <Button
         android:id="@+id/btn_squizpreview_start"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginEnd="24dp"
@@ -178,6 +179,7 @@
         app:fontFamily="@font/quicksand_bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -195,7 +197,7 @@
         app:fontFamily="@font/quicksand_light"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtView_phome_header2" />
+        app:layout_constraintTop_toBottomOf="@+id/txtView_squizpreview_header" />
 
     <TextView
         android:id="@+id/txtView_squizpreview_dynamic_quizname"
@@ -272,7 +274,7 @@
     <TextView
         android:id="@+id/txtView_squizpreview_dynamic_description"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
         android:layout_marginTop="4dp"
@@ -283,7 +285,7 @@
         android:textSize="18sp"
         app:fontFamily="@font/quicksand_bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtView_squizpreview_description" />
 
@@ -350,7 +352,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
-        android:text="@string/squizpreview_desc_description5"
+        android:text="@string/squizpreview_desc_description"
         android:textColor="@android:color/darker_gray"
         android:textSize="18sp"
         app:fontFamily="@font/quicksand_light"
@@ -360,12 +362,12 @@
         app:layout_constraintTop_toBottomOf="@+id/txtView_squizpreview_dynamic_noq" />
 
     <TextView
-        android:id="@+id/txtView_phome_header2"
+        android:id="@+id/txtView_squizpreview_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
         android:text="@string/phome_public_quizzes"
@@ -378,7 +380,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imgView_squizpreview_ic_back"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_marginStart="24dp"

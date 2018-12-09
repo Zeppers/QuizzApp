@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/txtView_pcreatequiz_description2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:text="@string/pcreatequiz_questions"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="18sp"
+        app:fontFamily="@font/quicksand_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtText_pcreatequiz_description" />
+
+    <TextView
+        android:id="@+id/txtView_pcreatequiz_quizname"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:text="@string/pcreatequiz_quizname"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="18sp"
+        app:fontFamily="@font/quicksand_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtView_pcreatequiz_head" />
+
+    <TextView
+        android:id="@+id/txtView_pcreatequiz_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:text="@string/pcreatequiz_description"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="18sp"
+        app:fontFamily="@font/quicksand_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtText_pcreatequiz_quizname" />
+
+    <TextView
+        android:id="@+id/txtView_pcreatequiz_head"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:text="@string/pcreatequiz_head"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="22sp"
+        app:fontFamily="@font/quicksand_bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgView_pcreatequiz_ic_back"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_back" />
+
+    <EditText
+        android:id="@+id/edtText_pcreatequiz_quizname"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtView_pcreatequiz_quizname" />
+
+    <EditText
+        android:id="@+id/edtText_pcreatequiz_description"
+        android:layout_width="0dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtView_pcreatequiz_description" />
+</android.support.constraint.ConstraintLayout>
