@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.example.aeroz.quizzapp.notActivities.Dialog;
 import com.example.aeroz.quizzapp.notActivities.Student;
 import com.example.aeroz.quizzapp.notActivities.Teacher;
+import com.example.aeroz.quizzapp.notActivities.Util;
 
 public class SigninActivity extends AppCompatActivity {
 
@@ -25,51 +26,38 @@ public class SigninActivity extends AppCompatActivity {
 
         editTextEmail = findViewById(R.id.edtText_signin_email);
         editTextPassword = findViewById(R.id.edtText_signin_password);
-
+        editTextEmail.setText("petrecosmin16@stud.ase.ro");
+        editTextPassword.setText("password1");
         Button button = findViewById(R.id.btn_signin_continue);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String username = editTextEmail.getText().toString();
+                String email = editTextEmail.getText().toString();
                 String password = editTextPassword.getText().toString();
-                if(username.contains("@stud.ase.ro")){
-                    for(Student s:SplashscreenActivity.students){
-                        if(s.getEmail().equals(username)){
-                            if(s.getPassword().equals(password)){
-                                startActivity(new Intent(SigninActivity.this,SHomeActivity.class).putExtra("student",s));
-                                break;
-                            }
-                            else Toast.makeText(SigninActivity.this,"incorrect password!",Toast.LENGTH_LONG).show();
-
-                        }
-                        Toast.makeText(SigninActivity.this,"incorrect email!",Toast.LENGTH_LONG).show();
+                Student student;
+                Teacher teacher;
+                if(email.contains("@stud.ase.ro")){
+                    if((student=Util.getStudentByEmail(email))!=null){
+                        if(student.getPassword().equals(password))
+                            startActivity(new Intent(SigninActivity.this,SHomeActivity.class).putExtra("student",student));
+                        else Toast.makeText(SigninActivity.this,R.string.signintoastpassword,Toast.LENGTH_LONG).show();
                     }
+                    else Toast.makeText(SigninActivity.this,R.string.signintoastemail,Toast.LENGTH_LONG).show();
                 }
-
-                else if(username.contains("@ie.ase.ro")){
-                    for(Teacher t:SplashscreenActivity.teachers){
-                        if(t.getEmail().equals(username)){
-                            if(t.getPassword().equals(password)){
-                                startActivity(new Intent(SigninActivity.this,PHomeActivity.class).putExtra("teacher",t));
-                                break;
-                            }
-                            else Toast.makeText(SigninActivity.this,"incorrect email!",Toast.LENGTH_LONG).show();
-                        }
-                        else Toast.makeText(SigninActivity.this,"incorrect password!",Toast.LENGTH_LONG).show();
+                else if(email.contains("@ie.ase.ro")){
+                    if((teacher = Util.getTeacherByEmail(email))!=null){
+                        if(teacher.getPassword().equals(password))
+                            startActivity(new Intent(SigninActivity.this,PHomeActivity.class).putExtra("teacher",teacher));
+                        else Toast.makeText(SigninActivity.this,R.string.signintoastpassword,Toast.LENGTH_LONG).show();
                     }
+                    else Toast.makeText(SigninActivity.this,R.string.signintoastemail,Toast.LENGTH_LONG).show();
                 }
-
-                else Toast.makeText(SigninActivity.this,"incorrect email!",Toast.LENGTH_LONG).show();
+                else Toast.makeText(SigninActivity.this,R.string.signintoastinstitutional,Toast.LENGTH_LONG).show();
             }
         }
 
         );
 
-
-
-
     }
-
-
 
 }

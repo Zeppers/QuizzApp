@@ -95,7 +95,11 @@
     <string name="sresult_corect">Corect</string>
     <string name="sresult_wrong">Wrong</string>
 
-
+    <string name="shometries">No more tries for this quiz! :-(</string>
+    <string name="shometoast">Select a public quiz or enter a code to take a quiz!</string>
+    <string name="signintoastemail">Incorrect email!</string>
+    <string name="signintoastpassword">Incorrect password!</string>
+    <string name="signintoastinstitutional">You must sign in with your institutional account!</string>
 
 
 </resources>

@@ -53,8 +53,8 @@ public class SplashscreenActivity extends AppCompatActivity {
         questions2.add(q7);
         questions2.add(q8);
 
-        Quiz quiz1 = new Quiz("Science",questions1,240,true,true,"Alin");
-        Quiz quiz2 = new Quiz("Literature and arts",questions2,240,true,true,"Marian");
+        Quiz quiz1 = new Quiz("Science","description1",questions1,240,true,false,"Alin");
+        Quiz quiz2 = new Quiz("Literature and arts","description2",questions2,240,true,false,"Marian");
         quizes.add(quiz1);quizes.add(quiz2);
 
         students.add(new Student("Petre Cosmin","petrecosmin16@stud.ase.ro","password1"));
@@ -64,6 +64,7 @@ public class SplashscreenActivity extends AppCompatActivity {
         teachers.add(new Teacher("Boja Catalin","bojacatalin@ie.ase.ro","password1"));
         teachers.add(new Teacher("Toma Andrei","tomaandrei@ie.ase.ro","password2"));
         teachers.add(new Teacher("Testescu Testulici","test@ie.ase.ro","password3",quizes));
+
 
         Thread thread = new Thread(){
             @Override
@@ -81,10 +82,5 @@ public class SplashscreenActivity extends AppCompatActivity {
         thread.start();
     }
 
-    public static boolean codeExists(long code,List<Quiz> list){
-        for(Quiz q:list)
-            if(code==q.getCode())
-                return true;
-        return false;
-    }
+
 }

@@ -9,9 +9,13 @@ public class TakenQuiz extends Quiz implements Serializable {
     private int remainingTries;
     private List<ChosenAnswer> chosenAnswers = new ArrayList<>();
     private int noCorrectAnswers = 0;
-    public TakenQuiz(String quizName, List<Question> questions, int time, boolean active, boolean privat,String creator, int remainingTries) {
-        super(quizName,questions,time,active,privat, creator);
-            this.remainingTries = remainingTries;
+
+    public TakenQuiz(){}
+
+    public TakenQuiz(Quiz q, int remainingTries){
+        super(q.quizName,q.description,q.questions,q.time,q.active,q.privat,q.creator);
+        this.id = q.id;
+        this.remainingTries = remainingTries;
     }
     public void chooseAnswers(Question question, int[] chosenAnswers){
         ChosenAnswer ca = new ChosenAnswer(question,chosenAnswers);
@@ -26,4 +30,5 @@ public class TakenQuiz extends Quiz implements Serializable {
         return (float)noCorrectAnswers/questions.size()*100;
     }
     public int getNoCorrectAnswers(){return this.noCorrectAnswers;}
+    public int getRemainingTries(){return this.remainingTries;}     public void setRemainingTries(int value){this.remainingTries = value;}
 }
