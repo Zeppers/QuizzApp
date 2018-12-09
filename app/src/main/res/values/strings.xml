@@ -54,7 +54,6 @@
     <string name="pcreatequiz_questions">Questions</string>
 
 
-
     <string name="pquizdetail_head">Quiz detail</string>
     <string name="pquizdetail_quizname">Quiz name</string>
     <string name="pquizdetail_data1">Created on 12th december of 2018</string>
@@ -101,5 +100,10 @@
     <string name="signintoastpassword">Incorrect password!</string>
     <string name="signintoastinstitutional">You must sign in with your institutional account!</string>
     <string name="shomeincorrectcode">Incorrect code!</string>
+
+    <string name="demoquiz_head">Why do you need a code?</string>
+    <string name="demoquiz_info">Every professor can create private or public quizzes. Private quizzes require a code every creator have.</string>
+    <string name="demoquiz_advice">If you don\'t have a code yet and want to try a quiz without losing a try, <b>take one of the demo quizzes below.</b></string>
+
 
 </resources>
