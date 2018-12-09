@@ -67,5 +67,8 @@ public class Quiz implements Serializable {
     public String getCreator(){return this.creator;}
     public void setCreator(String value){this.creator = value;}
 
+    public String getDescription(){return this.description;}
+    public void setDescription(String value){this.description =value;}
+
     public String toString(){return this.id+" "+this.description+" "+this.creator;}
 }

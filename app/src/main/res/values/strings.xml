@@ -100,6 +100,6 @@
     <string name="signintoastemail">Incorrect email!</string>
     <string name="signintoastpassword">Incorrect password!</string>
     <string name="signintoastinstitutional">You must sign in with your institutional account!</string>
-
+    <string name="shomeincorrectcode">Incorrect code!</string>
 
 </resources>

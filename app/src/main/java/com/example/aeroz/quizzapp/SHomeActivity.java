@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -25,6 +26,7 @@ import java.util.Spliterator;
 
 public class SHomeActivity extends AppCompatActivity {
     private ListView listView;
+    private EditText editText;
     private Quiz quiz=null;
     private Student student;
     @Override
@@ -36,6 +38,7 @@ public class SHomeActivity extends AppCompatActivity {
         Button button = findViewById(R.id.btn_shome_continue);
         student = (Student)getIntent().getExtras().getSerializable("student");
         listView = findViewById(R.id.list_shome_publicquizzes);
+        editText = findViewById(R.id.edtText_shome_code);
 
         //fill the listView
         final List<String> publicQuizes = new ArrayList<>();
@@ -50,26 +53,33 @@ public class SHomeActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                view.setSelected(true);
                 int quizId = Integer.parseInt(publicQuizes.get(position).split(" ")[0].split(":")[1]);
                 quiz = Util.getQuizById(quizId);
-                Log.d("panda", "onItemClick: "+quiz);
+                TakenQuiz tq = Util.getTakenQuizById(quiz.getId(),student);
+                if(tq==null||tq.getRemainingTries()!=0){
+                    startActivity(new Intent(SHomeActivity.this,SQuizPreviewActivity.class).putExtra("quiz",quiz).putExtra("student",student));
+                }
+                else Toast.makeText(SHomeActivity.this,R.string.shometries,Toast.LENGTH_LONG).show();
             }
         });
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                try {
+                    int code = Integer.parseInt(editText.getText().toString());
+                    quiz = Util.getQuizByCode(code);
+                }
+                catch(Exception ex){
+                    Toast.makeText(SHomeActivity.this,R.string.shomeincorrectcode,Toast.LENGTH_LONG).show();
+                }
                 if(quiz!=null){
                     TakenQuiz tq = Util.getTakenQuizById(quiz.getId(),student);
-                    if(tq==null||tq.getRemainingTries()!=0) {
-                        startActivity(new Intent(SHomeActivity.this, SQuizPreviewActivity.class).putExtra("quiz", quiz));
-                        quiz = null;
-                    }
+                    if(tq.getRemainingTries()!=0)
+                        startActivity(new Intent(SHomeActivity.this,SQuizPreviewActivity.class).putExtra("quiz",quiz).putExtra("student",student));
                     else Toast.makeText(SHomeActivity.this,R.string.shometries,Toast.LENGTH_LONG).show();
                 }
-                else Toast.makeText(SHomeActivity.this,R.string.shometoast,Toast.LENGTH_LONG).show();
+                else Toast.makeText(SHomeActivity.this,R.string.shome_code,Toast.LENGTH_LONG).show();
             }
         });
     }

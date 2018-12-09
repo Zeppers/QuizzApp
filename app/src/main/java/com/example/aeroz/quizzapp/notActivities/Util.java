@@ -58,4 +58,11 @@ public class Util extends AppCompatActivity {
         Log.d("panda", "getTakenQuizByID: takenQuiz doesnt exist!");
         return null;
     }
+    public static Quiz getQuizByCode(int code){
+        for(Quiz q:SplashscreenActivity.quizes)
+            if(q.getCode()==code)
+                return q;
+        Log.d("panda", "getQuizByCode: quiz doesnt exist!");
+        return null;
+    }
 }
