@@ -34,7 +34,8 @@ public class SQuizPreviewActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(SQuizPreviewActivity.this,SQuestionActivity.class).putExtra("quiz",quiz));
+                startActivity(new Intent(SQuizPreviewActivity.this,SQuestionActivity.class)
+                        .putExtra("quiz",quiz).putExtra("student",student));
             }
         });
 

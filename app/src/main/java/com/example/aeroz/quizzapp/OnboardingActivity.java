@@ -14,9 +14,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.aeroz.quizzapp.notActivities.SliderAdapter;
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 import org.w3c.dom.Text;
 
