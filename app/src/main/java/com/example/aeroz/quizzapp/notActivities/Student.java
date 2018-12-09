@@ -28,4 +28,6 @@ public class Student implements Serializable {
     public List<TakenQuiz> getTakenQuizes(){return  this.takenQuizes;}      public void setTakenQuizes(List<TakenQuiz> value){this.takenQuizes = value;}
     public String getPassword(){return this.password;}      public void setPassword(String value){this.password = value;}
 
+    public String toString(){return this.name + " "+ this.email+" "+this.password;}
+
 }

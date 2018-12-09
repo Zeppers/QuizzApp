@@ -28,4 +28,5 @@ public class Teacher implements Serializable {
     public List<Quiz> getQuizes(){return  this.quizes;}     public void setQuizes(List<Quiz> value){this.quizes = value;}
     public String getPassword(){return this.password;}      public void setPassword(String value){this.password = value;}
 
+    public String toString(){return this.name+ " "+this.email+" "+this.password;}
 }

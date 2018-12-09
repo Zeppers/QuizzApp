@@ -1,6 +1,8 @@
 package com.example.aeroz.quizzapp.notActivities;
 
-public class Util {
+import android.support.v7.app.AppCompatActivity;
+
+public class Util extends AppCompatActivity {
     public static boolean arraysEqual(int[] array1, int[] array2){
         if(array1.length!=array2.length)
             return false;
@@ -9,4 +11,5 @@ public class Util {
                 return false;
         return true;
     }
+
 }

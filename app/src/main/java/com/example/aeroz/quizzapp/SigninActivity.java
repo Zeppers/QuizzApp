@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.aeroz.quizzapp.notActivities.Dialog;
 import com.example.aeroz.quizzapp.notActivities.Student;
@@ -38,14 +39,13 @@ public class SigninActivity extends AppCompatActivity {
                                 startActivity(new Intent(SigninActivity.this,SHomeActivity.class).putExtra("student",s));
                                 break;
                             }
-                            showDialog();
+                            else Toast.makeText(SigninActivity.this,"incorrect password!",Toast.LENGTH_LONG).show();
 
                         }
-                        showDialog();
+                        Toast.makeText(SigninActivity.this,"incorrect email!",Toast.LENGTH_LONG).show();
                     }
-
-
                 }
+
                 else if(username.contains("@ie.ase.ro")){
                     for(Teacher t:SplashscreenActivity.teachers){
                         if(t.getEmail().equals(username)){
@@ -53,12 +53,13 @@ public class SigninActivity extends AppCompatActivity {
                                 startActivity(new Intent(SigninActivity.this,PHomeActivity.class).putExtra("teacher",t));
                                 break;
                             }
-                            showDialog();
+                            else Toast.makeText(SigninActivity.this,"incorrect email!",Toast.LENGTH_LONG).show();
                         }
-                        showDialog();
+                        else Toast.makeText(SigninActivity.this,"incorrect password!",Toast.LENGTH_LONG).show();
                     }
                 }
-                showDialog();
+
+                else Toast.makeText(SigninActivity.this,"incorrect email!",Toast.LENGTH_LONG).show();
             }
         }
 
@@ -69,10 +70,6 @@ public class SigninActivity extends AppCompatActivity {
 
     }
 
-    public void showDialog()
-    {
-        Dialog errorDialog=new Dialog();
-        errorDialog.show(getSupportFragmentManager(),"errorDialog");
-    }
+
 
 }

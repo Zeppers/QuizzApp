@@ -3,11 +3,15 @@ package com.example.aeroz.quizzapp;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.example.aeroz.quizzapp.notActivities.Student;
+
 public class SHomeActivity extends AppCompatActivity {
+    public Student student;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +27,9 @@ public class SHomeActivity extends AppCompatActivity {
 
             }
         });
+
+        student = (Student)getIntent().getExtras().getSerializable("student");
+        Log.d("pandastudent", "onCreate: "+student);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
