@@ -83,100 +83,135 @@
         app:layout_constraintStart_toEndOf="@+id/txtView_squestion_header"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/txtView_squestion_question"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/linearLayout_question"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        android:text="Who is the president of Romania?"
-        android:textSize="18sp"
-        app:fontFamily="@font/quicksand_bold"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout_ans1_2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/prgBar_squestion_timeleft" />
+        app:layout_constraintTop_toBottomOf="@+id/prgBar_squestion_timeleft">
 
-    <TextView
-        android:id="@+id/txtView_squestion_ans1"
+        <TextView
+            android:id="@+id/txtView_squestion_question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="48dp"
+            android:layout_marginLeft="48dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="32dp"
+            android:layout_marginEnd="48dp"
+            android:layout_marginRight="48dp"
+            android:text="Who is the president of Romania?"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            app:fontFamily="@font/quicksand_bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/prgBar_squestion_timeleft" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout_ans1_2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        android:layout_marginBottom="24dp"
-        android:gravity="center"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        android:text="Answer1"
-        android:textSize="18sp"
-        app:fontFamily="@font/quicksand_regular"
-        app:layout_constraintBottom_toTopOf="@+id/txtView_squestion_ans3"
-        app:layout_constraintEnd_toStartOf="@+id/txtView_squestion_ans2"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:background="@color/gray" />
-
-    <TextView
-        android:id="@+id/txtView_squestion_ans2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        android:layout_marginBottom="24dp"
-        android:gravity="center"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        android:text="Answer2"
-        android:textSize="18sp"
-        app:fontFamily="@font/quicksand_regular"
-        app:layout_constraintBottom_toTopOf="@+id/txtView_squestion_ans4"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout_ans3_4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/txtView_squestion_ans1"
-        tools:background="@color/gray" />
-
-    <TextView
-        android:id="@+id/txtView_squestion_ans3"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        android:layout_marginBottom="24dp"
-        android:gravity="center"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        android:text="Answer3"
-        android:textSize="18sp"
-        app:fontFamily="@font/quicksand_regular"
-        app:layout_constraintBottom_toTopOf="@+id/btn_squestion_continue"
-        app:layout_constraintEnd_toStartOf="@+id/txtView_squestion_ans4"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:background="@color/gray" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout_question">
 
-    <TextView
-        android:id="@+id/txtView_squestion_ans4"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|center_horizontal|center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtView_squestion_ans1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="12dp"
+                android:layout_weight="1"
+                android:background="@color/colorPrimaryDark"
+                android:gravity="center_vertical|center_horizontal|center"
+                android:paddingTop="24dp"
+                android:paddingBottom="24dp"
+                android:text="Answer 1"
+                android:textSize="14sp"
+                app:fontFamily="@font/quicksand_regular" />
+
+            <TextView
+                android:id="@+id/txtView_squestion_ans2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="24dp"
+                android:layout_weight="1"
+                android:background="@color/colorPrimaryDark"
+                android:gravity="center_vertical|center_horizontal|center"
+                android:paddingTop="24dp"
+                android:paddingBottom="24dp"
+                android:text="Answer 2"
+                app:fontFamily="@font/quicksand_regular" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout_ans3_4"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
         android:layout_marginBottom="24dp"
-        android:gravity="center"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        android:text="Answer4"
-        android:textSize="18sp"
-        app:fontFamily="@font/quicksand_regular"
+        android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/btn_squestion_continue"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/txtView_squestion_ans3"
-        tools:background="@color/gray" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout_ans1_2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical|center_horizontal|center"
+            android:gravity="center_vertical|center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtView_squestion_ans3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="12dp"
+                android:layout_weight="1"
+                android:background="@color/colorPrimaryDark"
+                android:gravity="center_vertical|center_horizontal|center"
+                android:paddingTop="24dp"
+                android:paddingBottom="24dp"
+                android:text="Answer 3"
+                app:fontFamily="@font/quicksand_regular" />
+
+            <TextView
+                android:id="@+id/txtView_squestion_ans4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="24dp"
+                android:layout_weight="1"
+                android:background="@color/colorPrimaryDark"
+                android:gravity="center_vertical|center_horizontal|center"
+                android:paddingTop="24dp"
+                android:paddingBottom="24dp"
+                android:text="Answer 4"
+                app:fontFamily="@font/quicksand_regular" />
+        </LinearLayout>
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
