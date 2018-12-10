@@ -21,4 +21,14 @@ public class Question implements Serializable {
 
     public int[] getCorrectAnswers(){return this.correctAnswers;}
     public void setCorrectAnswers(int[] value){this.correctAnswers = value;}
+
+    public String toString(){
+        String answers="";
+        String correctAnswers="";
+        for(int i = 0;i<this.answers.length;i++)
+            answers+=this.answers[i]+" ";
+        for(int i =0;i<this.correctAnswers.length;i++)
+            correctAnswers+=this.correctAnswers[i];
+        return questionText+" "+answers+" "+correctAnswers;
+    }
 }

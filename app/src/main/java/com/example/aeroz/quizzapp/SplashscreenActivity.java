@@ -10,10 +10,15 @@ import android.util.Log;
 import com.example.aeroz.quizzapp.notActivities.ChosenAnswer;
 import com.example.aeroz.quizzapp.notActivities.Question;
 import com.example.aeroz.quizzapp.notActivities.Quiz;
+import com.example.aeroz.quizzapp.notActivities.Reader;
 import com.example.aeroz.quizzapp.notActivities.Student;
 import com.example.aeroz.quizzapp.notActivities.TakenQuiz;
 import com.example.aeroz.quizzapp.notActivities.Teacher;
 import com.example.aeroz.quizzapp.notActivities.Util;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +28,8 @@ public class SplashscreenActivity extends AppCompatActivity {
     public static List<Student> students = new ArrayList<>();
     public static List<Teacher> teachers = new ArrayList<>();
     public static List<Quiz> quizes = new ArrayList<>();
+    public static List<Quiz> demoQuizes = new ArrayList<>();
+    public String JSONContent = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +69,47 @@ public class SplashscreenActivity extends AppCompatActivity {
         teachers.add(new Teacher("Testescu Testulici","test@ie.ase.ro","password3",quizes));
 
 
+        Reader reader = new Reader(){
+            @Override
+            protected void onPostExecute(String s){
+                try {
+                    JSONArray JSONquizesArray = new JSONObject(s).getJSONArray("Quizes");
+                    for(int i = 0;i<JSONquizesArray.length();i++){
+                        List<Question> questions = new ArrayList<>();
+                        int id = ((JSONObject)JSONquizesArray.get(i)).getInt("id");
+                        String quizName = ((JSONObject)JSONquizesArray.get(i)).getString("quizName");
+                        String description = ((JSONObject)JSONquizesArray.get(i)).getString("description");
+                        int time = ((JSONObject)JSONquizesArray.get(i)).getInt("time");
+                        boolean active = ((JSONObject)JSONquizesArray.get(i)).getBoolean("active");
+                        boolean privat = ((JSONObject)JSONquizesArray.get(i)).getBoolean("privat");
+                        int code = ((JSONObject)JSONquizesArray.get(i)).getInt("code");
+                        String creator = ((JSONObject)JSONquizesArray.get(i)).getString("creator");
+
+
+                        JSONArray JSONQuestions = ((JSONObject) JSONquizesArray.get(i)).getJSONArray("questions");
+                        for(int j = 0;j<JSONQuestions.length();j++){
+                            String questionText = ((JSONObject)JSONQuestions.get(j)).getString("questionText");
+                            JSONArray JSONAnswers = ((JSONObject) JSONQuestions.get(j)).getJSONArray("answers");
+                            JSONArray JSONCorrectAnswers = ((JSONObject) JSONQuestions.get(j)).getJSONArray("correctAnswers");
+                            String[] answers = new String[JSONAnswers.length()];
+                            int[] correctAnswers = new int[JSONCorrectAnswers.length()];
+                            for(int k = 0;k<answers.length;k++)
+                                answers[k] = (String)JSONAnswers.get(k);
+                            for(int l = 0;l<correctAnswers.length;l++)
+                                correctAnswers[l] = (int)JSONCorrectAnswers.get(l);
+                            questions.add(new Question(questionText,answers,correctAnswers));
+                        }
+                        Quiz quiz = new Quiz(quizName,description,questions,time,active,privat,creator);
+                        Log.d("panda", "onPostExecute: "+quiz);
+                        demoQuizes.add(quiz);
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+        reader.execute("http://188.25.76.3:8000");
         Thread thread = new Thread(){
             @Override
 

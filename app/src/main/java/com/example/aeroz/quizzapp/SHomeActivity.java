@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.aeroz.quizzapp.notActivities.Quiz;
@@ -29,6 +30,7 @@ public class SHomeActivity extends AppCompatActivity {
     private EditText editText;
     private Quiz quiz=null;
     private Student student;
+    private TextView whyNeedCode;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +41,13 @@ public class SHomeActivity extends AppCompatActivity {
         student = (Student)getIntent().getExtras().getSerializable("student");
         listView = findViewById(R.id.list_shome_publicquizzes);
         editText = findViewById(R.id.edtText_shome_code);
+        whyNeedCode = findViewById(R.id.txtView_shome_why);
+        whyNeedCode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SHomeActivity.this,DemoQuizActivity.class).putExtra("student",student));
+            }
+        });
 
         //fill the listView
         final List<String> publicQuizes = new ArrayList<>();
