@@ -1,8 +1,10 @@
 package com.example.aeroz.quizzapp.notActivities;
 
-public class ChosenAnswer {
-    public Question question;
-    public int[] chosenAnswers;
+import java.io.Serializable;
+
+public class ChosenAnswer implements Serializable {
+    private Question question;
+    private int[] chosenAnswers;
 
     public ChosenAnswer(Question question, int[] chosenAnswers){
         this.question = question;
@@ -14,4 +16,7 @@ public class ChosenAnswer {
             array+=chosenAnswers[i]+",";
         return this.question.getQuestionText()+array;
     }
+
+    public Question getQuestion(){return this.question;}
+    public int[] getChosenAnswers(){return this.chosenAnswers;}
 }

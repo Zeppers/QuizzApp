@@ -8,8 +8,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.aeroz.quizzapp.notActivities.ChosenAnswer;
+import com.example.aeroz.quizzapp.notActivities.Question;
 import com.example.aeroz.quizzapp.notActivities.Quiz;
 import com.example.aeroz.quizzapp.notActivities.Student;
+import com.example.aeroz.quizzapp.notActivities.TakenQuiz;
+import com.example.aeroz.quizzapp.notActivities.Util;
+
+import java.util.List;
 
 public class SQuestionActivity extends AppCompatActivity {
 
@@ -20,6 +26,8 @@ public class SQuestionActivity extends AppCompatActivity {
     private TextView textViewNoQuestion;
     private TextView textViewQuestion;
     private TextView[] textViewsAnswers;
+    private TakenQuiz takenQuiz;
+    private boolean[] answer = new boolean[4];
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,8 +44,48 @@ public class SQuestionActivity extends AppCompatActivity {
         textViewsAnswers[3] = findViewById(R.id.txtView_squestion_ans4);
         student = (Student)getIntent().getExtras().getSerializable("student");
         quiz = (Quiz)getIntent().getExtras().getSerializable("quiz");
+        takenQuiz = new TakenQuiz(quiz);
         //////////////////////////////////////////////////////////////////
-
+        textViewsAnswers[0].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                answer[0]=!answer[0];
+                if(answer[0])
+                    textViewsAnswers[0].setTextColor(getResources().getColor(R.color.aqua));
+                else
+                    textViewsAnswers[0].setTextColor(getResources().getColor(R.color.white));
+            }
+        });
+        textViewsAnswers[1].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                answer[1]=!answer[1];
+                if(answer[1])
+                    textViewsAnswers[1].setTextColor(getResources().getColor(R.color.aqua));
+                else
+                    textViewsAnswers[1].setTextColor(getResources().getColor(R.color.white));
+            }
+        });
+        textViewsAnswers[2].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                answer[2]=!answer[2];
+                if(answer[2])
+                    textViewsAnswers[2].setTextColor(getResources().getColor(R.color.aqua));
+                else
+                    textViewsAnswers[2].setTextColor(getResources().getColor(R.color.white));
+            }
+        });
+        textViewsAnswers[3].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                answer[3]=!answer[3];
+                if(answer[3])
+                    textViewsAnswers[3].setTextColor(getResources().getColor(R.color.aqua));
+                else
+                    textViewsAnswers[3].setTextColor(getResources().getColor(R.color.white));
+            }
+        });
         textViewNoQuestion.setText(""+1+"/"+quiz.getQuestions().size());
         textViewQuestion.setText(quiz.getQuestions().get(0).getQuestionText());
         for(int i = 0;i<4;i++)
@@ -45,13 +93,46 @@ public class SQuestionActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                takenQuiz.chooseAnswers(Util.getQuestionByQuestionText(textViewQuestion.getText().toString(),quiz.getQuestions()),getChosenAnswer().getChosenAnswers());
                 if(currentQuestion<quiz.getQuestions().size()) {
-                    textViewNoQuestion.setText("" + (++currentQuestion) + "/" + quiz.getQuestions().size());
-                    textViewQuestion.setText(quiz.getQuestions().get(currentQuestion - 1).getQuestionText());
-                    for (int i = 0; i < 4; i++)
-                        textViewsAnswers[i].setText(""+(char)(65+i)+")"+quiz.getQuestions().get(currentQuestion - 1).getAnswers()[i]);
+                    if(Util.arraysEqual(getChosenAnswer().getChosenAnswers(),Util.getQuestionByQuestionText(textViewQuestion.getText().toString(),quiz.getQuestions()).getCorrectAnswers()))
+                        Log.d("panda", "onClick: "+"corect!");
+                    else
+                        Log.d("panda", "onClick: "+"gresit!");
+                    ResetQuestion();
+                }
+                else{
+                    if(Util.getTakenQuizById(takenQuiz.getId(),student)==null)
+                        student.getTakenQuizes().add(takenQuiz);
+                    startActivity(new Intent(SQuestionActivity.this,SResultActivity.class).putExtra("student",student).putExtra("takenQuizID",takenQuiz.getId()));
                 }
             }
         });
+    }
+    public void ResetQuestion(){
+        textViewNoQuestion.setText("" + (++currentQuestion) + "/" + quiz.getQuestions().size());
+        textViewQuestion.setText(quiz.getQuestions().get(currentQuestion - 1).getQuestionText());
+        for (int i = 0; i < 4; i++)
+            textViewsAnswers[i].setText(""+(char)(65+i)+")"+quiz.getQuestions().get(currentQuestion - 1).getAnswers()[i]);
+        for(int i = 0;i<answer.length;i++){
+            answer[i] = false;
+            textViewsAnswers[i].setTextColor(getResources().getColor(R.color.white));
+        }
+    }
+    public ChosenAnswer getChosenAnswer(){
+        int noSelected=0;
+        int nr=0;
+        for(int i = 0;i<answer.length;i++)
+            if(answer[i])
+                noSelected++;
+        int[] chosenAnswer = new int[noSelected];
+        for(int k = 0;k<answer.length;k++){
+            if(answer[k]){
+                chosenAnswer[nr] = k;
+                nr++;
+            }
+        }
+        return new ChosenAnswer(Util.getQuestionByQuestionText(textViewQuestion.getText().toString(),quiz.getQuestions()),chosenAnswer);
     }
 }

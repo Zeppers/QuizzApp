@@ -143,6 +143,7 @@
                 android:paddingTop="24dp"
                 android:paddingBottom="24dp"
                 android:text="Answer 1"
+                android:textColor="@color/white"
                 android:textSize="14sp"
                 app:fontFamily="@font/quicksand_regular" />
 

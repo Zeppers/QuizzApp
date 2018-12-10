@@ -67,6 +67,8 @@ public class SHomeActivity extends AppCompatActivity {
                 TakenQuiz tq = Util.getTakenQuizById(quiz.getId(),student);
                 if(tq==null||tq.getRemainingTries()!=0){
                     startActivity(new Intent(SHomeActivity.this,SQuizPreviewActivity.class).putExtra("quiz",quiz).putExtra("student",student));
+                    if(tq!=null)
+                        tq.setRemainingTries(tq.getRemainingTries()-1);
                 }
                 else Toast.makeText(SHomeActivity.this,R.string.shometries,Toast.LENGTH_LONG).show();
             }
@@ -84,8 +86,11 @@ public class SHomeActivity extends AppCompatActivity {
                 }
                 if(quiz!=null){
                     TakenQuiz tq = Util.getTakenQuizById(quiz.getId(),student);
-                    if(tq.getRemainingTries()!=0)
-                        startActivity(new Intent(SHomeActivity.this,SQuizPreviewActivity.class).putExtra("quiz",quiz).putExtra("student",student));
+                    if(tq.getRemainingTries()!=0) {
+                        startActivity(new Intent(SHomeActivity.this, SQuizPreviewActivity.class).putExtra("quiz", quiz).putExtra("student", student));
+                        if(tq!=null)
+                            tq.setRemainingTries(tq.getRemainingTries()-1);
+                    }
                     else Toast.makeText(SHomeActivity.this,R.string.shometries,Toast.LENGTH_LONG).show();
                 }
                 else Toast.makeText(SHomeActivity.this,R.string.shome_code,Toast.LENGTH_LONG).show();

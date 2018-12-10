@@ -57,7 +57,12 @@ public class Util extends AppCompatActivity {
         Log.d("panda", "getDemoQuizById: quiz doesnt exist!");
         return null;
     }
-
+    public static Question getQuestionByQuestionText(String questionText, List<Question> questions){
+        for(Question question:questions)
+            if(question.getQuestionText().equals(questionText))
+                return question;
+        return null;
+    }
     public static TakenQuiz getTakenQuizById(int id,Student s){
         for(TakenQuiz tq:s.getTakenQuizes())
             if(tq.getId()==id)
