@@ -41,7 +41,7 @@ public class SplashscreenActivity extends AppCompatActivity {
 
         Question q1 = new Question("Who was the first american in space?",new String[]{"Alan Shepard","Donald Trump","Marizio Tutti","Mariah Carey"},new int[]{0,1,2});
         Question q2 = new Question("Which planet is nearest the sun",new String[]{"the Moon","Jupiter","Venus","Mercur"},new int[]{0,2});
-        Question q3 = new Question("Which device was invented by Henry Mill", new String[]{"metal dildo","toothbrush","pen","typewriter"},new int[]{2});
+        Question q3 = new Question("Which device was invented by Henry Mill", new String[]{"metal thing","toothbrush","pen","typewriter"},new int[]{2});
         Question q4 = new Question("Which unit indicate the light intensity?",new String[]{"bar","ohm","amper","candela"},new int[]{1,3});
         questions1.add(q1);
         questions1.add(q2);
