@@ -24,13 +24,14 @@ public class SResultActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sresult);
 
         student = (Student)getIntent().getExtras().getSerializable("student");
-        takenQuiz = Util.getTakenQuizById(getIntent().getExtras().getInt("takenQuizID"),student);
+        takenQuiz = (TakenQuiz)getIntent().getExtras().getSerializable("takenQuiz");
         score = findViewById(R.id.txtView_sresult_score);
         correctAns = findViewById(R.id.txtView_sresult_corectans);
         wrongAns = findViewById(R.id.txtView_sresult_wrongans);
-        score.setText(""+(takenQuiz.calculateScore()*100)+"%");
+        score.setText(""+(takenQuiz.calculateScore())+"%");
         correctAns.setText(""+takenQuiz.getNoCorrectAnswers());
         wrongAns.setText(""+(takenQuiz.getQuestions().size()-takenQuiz.getNoCorrectAnswers()));
+        Log.d("pandaren", "onCreate: "+takenQuiz.getNoCorrectAnswers());
 
         findViewById(R.id.btn_sresult_submit).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,7 +55,5 @@ public class SResultActivity extends AppCompatActivity {
             }
         });
 
-        Log.d("panda", "onCreate: "+student+"\n"+takenQuiz);
-        Log.d("panda", "onCreate: "+takenQuiz.getRemainingTries());
     }
 }

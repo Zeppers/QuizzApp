@@ -49,7 +49,10 @@ public class SQuestionActivity extends AppCompatActivity {
             public void onClick(View v) {
                 answer[0]=!answer[0];
                 if(answer[0])
-                    textViewsAnswers[0].setTextColor(getResources().getColor(R.color.aqua));
+                {
+                    textViewsAnswers[0].setTextColor(getResources().getColor(R.color.colorAccent));
+                }
+
                 else
                     textViewsAnswers[0].setTextColor(getResources().getColor(R.color.white));
             }
@@ -59,7 +62,7 @@ public class SQuestionActivity extends AppCompatActivity {
             public void onClick(View v) {
                 answer[1]=!answer[1];
                 if(answer[1])
-                    textViewsAnswers[1].setTextColor(getResources().getColor(R.color.aqua));
+                    textViewsAnswers[1].setTextColor(getResources().getColor(R.color.colorAccent));
                 else
                     textViewsAnswers[1].setTextColor(getResources().getColor(R.color.white));
             }
@@ -69,7 +72,7 @@ public class SQuestionActivity extends AppCompatActivity {
             public void onClick(View v) {
                 answer[2]=!answer[2];
                 if(answer[2])
-                    textViewsAnswers[2].setTextColor(getResources().getColor(R.color.aqua));
+                    textViewsAnswers[2].setTextColor(getResources().getColor(R.color.colorAccent));
                 else
                     textViewsAnswers[2].setTextColor(getResources().getColor(R.color.white));
             }
@@ -79,7 +82,7 @@ public class SQuestionActivity extends AppCompatActivity {
             public void onClick(View v) {
                 answer[3]=!answer[3];
                 if(answer[3])
-                    textViewsAnswers[3].setTextColor(getResources().getColor(R.color.aqua));
+                    textViewsAnswers[3].setTextColor(getResources().getColor(R.color.colorAccent));
                 else
                     textViewsAnswers[3].setTextColor(getResources().getColor(R.color.white));
             }
@@ -101,8 +104,9 @@ public class SQuestionActivity extends AppCompatActivity {
                     ResetQuestion();
                 }
                 else{
-                    startActivity(new Intent(SQuestionActivity.this,SResultActivity.class).putExtra("student",student).putExtra("takenQuizID",takenQuiz.getId()));
+                    startActivity(new Intent(SQuestionActivity.this,SResultActivity.class).putExtra("student",student).putExtra("takenQuiz",takenQuiz));
                 }
+                Log.d("pandaren", "onClick: "+ takenQuiz.getNoCorrectAnswers());
             }
         });
     }

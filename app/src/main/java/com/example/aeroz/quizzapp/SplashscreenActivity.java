@@ -29,6 +29,7 @@ public class SplashscreenActivity extends AppCompatActivity {
     public static List<Teacher> teachers = new ArrayList<>();
     public static List<Quiz> quizes = new ArrayList<>();
     public static List<Quiz> demoQuizes = new ArrayList<>();
+
     public String JSONContent = "";
 
     @Override
@@ -38,6 +39,7 @@ public class SplashscreenActivity extends AppCompatActivity {
 
         List<Question> questions1 = new ArrayList<>();
         List<Question> questions2 = new ArrayList<>();
+        List<Question> questions3=new ArrayList<>();
 
         Question q1 = new Question("Who was the first american in space?",new String[]{"Alan Shepard","Donald Trump","Marizio Tutti","Mariah Carey"},new int[]{0,1,2});
         Question q2 = new Question("Which planet is nearest the sun",new String[]{"the Moon","Jupiter","Venus","Mercur"},new int[]{0,2});
@@ -56,9 +58,26 @@ public class SplashscreenActivity extends AppCompatActivity {
         questions2.add(q7);
         questions2.add(q8);
 
-        Quiz quiz1 = new Quiz("Science","description1",questions1,240,true,false,"Alin");
-        Quiz quiz2 = new Quiz("Literature and arts","description2",questions2,240,true,false,"Marian");
-        quizes.add(quiz1);quizes.add(quiz2);
+        Question q9 = new Question("What is the most basic language Microsoft made?",new String[]{"Visual Basic","DirectX","Batch","C++"},new int[]{0});
+        Question q10 = new Question(
+                "Using the declaration below, what will be the final element of the array? int [ ] grades = new int[35]?",new String[]{"Grades[34]","Grades[0]","Grades[35]","Impossible to tell"},new int[]{1});
+        Question q11 = new Question(
+                "It is the command used to compile Java program in the command prompt.",new String[]{"javac","java","jav","javacompile"},new int[]{0});
+        Question q12 = new Question(
+                "It is the length of the data type short.",new String[]{"8 bits","32 bits","16 bites","1 bite"},new int[]{2});
+        questions3.add(q9);
+        questions3.add(q10);
+        questions3.add(q11);
+        questions3.add(q12);
+
+
+        Quiz quiz3=new Quiz("Java Programming","Quiz for basic knowledge of Java Programming",questions3,240,true,true,"Zamfiroiu Alin");
+
+        Log.d("pandarer",""+quiz3.getCode());
+        Quiz quiz1 = new Quiz("Science","description1",questions1,240,true,false,"Zamfiroiu Alin");
+        Quiz quiz2 = new Quiz("Literature and arts","description2",questions2,240,true,false,"Craciun Marian");
+
+        quizes.add(quiz1);quizes.add(quiz2); quizes.add(quiz3);
 
         students.add(new Student("Petre Cosmin","petrecosmin16@stud.ase.ro","password1"));
         students.add(new Student("Niculae Andreea","niculaeandreea16@stud.ase.ro","password2"));
@@ -67,6 +86,9 @@ public class SplashscreenActivity extends AppCompatActivity {
         teachers.add(new Teacher("Boja Catalin","bojacatalin@ie.ase.ro","password1"));
         teachers.add(new Teacher("Toma Andrei","tomaandrei@ie.ase.ro","password2"));
         teachers.add(new Teacher("Testescu Testulici","test@ie.ase.ro","password3",quizes));
+
+
+
 
 
         Reader reader = new Reader(){
@@ -110,7 +132,7 @@ public class SplashscreenActivity extends AppCompatActivity {
                 }
             }
         };
-        reader.execute("http://188.25.76.3:8000");
+        reader.execute("https://api.myjson.com/bins/1f1hna");
         Thread thread = new Thread(){
             @Override
 

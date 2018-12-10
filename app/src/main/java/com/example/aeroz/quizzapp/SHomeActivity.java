@@ -31,6 +31,9 @@ public class SHomeActivity extends AppCompatActivity {
     private Quiz quiz=null;
     private Student student;
     private TextView whyNeedCode;
+    private Button demoButton;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +45,7 @@ public class SHomeActivity extends AppCompatActivity {
         listView = findViewById(R.id.list_shome_publicquizzes);
         editText = findViewById(R.id.edtText_shome_code);
         whyNeedCode = findViewById(R.id.txtView_shome_why);
+        demoButton=findViewById(R.id.btn_demo);
         whyNeedCode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,17 +76,29 @@ public class SHomeActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try {
-                    int code = Integer.parseInt(editText.getText().toString());
-                    quiz = Util.getQuizByCode(code);
+                int code = Integer.parseInt(editText.getText().toString());
+                quiz = Util.getQuizByCode(code);
+                if(quiz!=null){
+                    startActivity(new Intent(SHomeActivity.this, SQuizPreviewActivity.class)
+                            .putExtra("quiz", quiz).putExtra("student", student));
                 }
-                catch(Exception ex){
-                    Toast.makeText(SHomeActivity.this,R.string.shomeincorrectcode,Toast.LENGTH_LONG).show();
-                }
-                startActivity(new Intent(SHomeActivity.this, SQuizPreviewActivity.class)
-                        .putExtra("quiz", quiz).putExtra("student", student));
+                else Toast.makeText(SHomeActivity.this,R.string.shomeincorrectcode,Toast.LENGTH_LONG).show();
+
             }
         });
+
+        demoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int code=0;
+                for(Quiz q:SplashscreenActivity.quizes)
+                    if(q.isPrivat())
+                        code = (int)q.getCode();
+                editText.setText(""+code);
+
+            }
+        });
+
     }
 
 }
