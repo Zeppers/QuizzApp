@@ -100,7 +100,8 @@ public class SplashscreenActivity extends AppCompatActivity {
                             questions.add(new Question(questionText,answers,correctAnswers));
                         }
                         Quiz quiz = new Quiz(quizName,description,questions,time,active,privat,creator);
-                        Log.d("panda", "onPostExecute: "+quiz);
+                        quiz.setId(id);
+                        quiz.setCode(code);
                         demoQuizes.add(quiz);
                     }
 

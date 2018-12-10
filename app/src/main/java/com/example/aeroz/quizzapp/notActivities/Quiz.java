@@ -71,4 +71,7 @@ public class Quiz implements Serializable {
     public void setDescription(String value){this.description =value;}
 
     public String toString(){return this.id+" "+this.description+" "+this.creator;}
+
+    public void setId(int value){this.id = value;}
+    public void setCode(int value){this.code = code;}
 }

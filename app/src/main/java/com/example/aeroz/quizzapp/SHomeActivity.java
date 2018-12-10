@@ -64,13 +64,8 @@ public class SHomeActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 int quizId = Integer.parseInt(publicQuizes.get(position).split(" ")[0].split(":")[1]);
                 quiz = Util.getQuizById(quizId);
-                TakenQuiz tq = Util.getTakenQuizById(quiz.getId(),student);
-                if(tq==null||tq.getRemainingTries()!=0){
-                    startActivity(new Intent(SHomeActivity.this,SQuizPreviewActivity.class).putExtra("quiz",quiz).putExtra("student",student));
-                    if(tq!=null)
-                        tq.setRemainingTries(tq.getRemainingTries()-1);
-                }
-                else Toast.makeText(SHomeActivity.this,R.string.shometries,Toast.LENGTH_LONG).show();
+                startActivity(new Intent(SHomeActivity.this,SQuizPreviewActivity.class)
+                        .putExtra("quiz",quiz).putExtra("student",student));
             }
         });
 
@@ -84,16 +79,8 @@ public class SHomeActivity extends AppCompatActivity {
                 catch(Exception ex){
                     Toast.makeText(SHomeActivity.this,R.string.shomeincorrectcode,Toast.LENGTH_LONG).show();
                 }
-                if(quiz!=null){
-                    TakenQuiz tq = Util.getTakenQuizById(quiz.getId(),student);
-                    if(tq.getRemainingTries()!=0) {
-                        startActivity(new Intent(SHomeActivity.this, SQuizPreviewActivity.class).putExtra("quiz", quiz).putExtra("student", student));
-                        if(tq!=null)
-                            tq.setRemainingTries(tq.getRemainingTries()-1);
-                    }
-                    else Toast.makeText(SHomeActivity.this,R.string.shometries,Toast.LENGTH_LONG).show();
-                }
-                else Toast.makeText(SHomeActivity.this,R.string.shome_code,Toast.LENGTH_LONG).show();
+                startActivity(new Intent(SHomeActivity.this, SQuizPreviewActivity.class)
+                        .putExtra("quiz", quiz).putExtra("student", student));
             }
         });
     }

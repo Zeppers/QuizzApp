@@ -77,4 +77,15 @@ public class Util extends AppCompatActivity {
         Log.d("panda", "getQuizByCode: quiz doesnt exist!");
         return null;
     }
+
+    public static boolean isDemoQuiz(Quiz quiz){
+        if(quiz.getId()<1000)
+            return true;
+        return false;
+    }
+    public static boolean isDemoQuiz(TakenQuiz quiz){
+        if(quiz.getId()<1000)
+            return true;
+        return false;
+    }
 }

@@ -19,7 +19,6 @@ import java.util.List;
 
 public class SQuestionActivity extends AppCompatActivity {
 
-    private Quiz quiz;
     private Student student;
     private Button button;
     private int currentQuestion = 1;
@@ -43,8 +42,7 @@ public class SQuestionActivity extends AppCompatActivity {
         textViewsAnswers[2] = findViewById(R.id.txtView_squestion_ans3);
         textViewsAnswers[3] = findViewById(R.id.txtView_squestion_ans4);
         student = (Student)getIntent().getExtras().getSerializable("student");
-        quiz = (Quiz)getIntent().getExtras().getSerializable("quiz");
-        takenQuiz = new TakenQuiz(quiz);
+        takenQuiz = (TakenQuiz)getIntent().getExtras().getSerializable("takenQuiz");
         //////////////////////////////////////////////////////////////////
         textViewsAnswers[0].setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,35 +84,33 @@ public class SQuestionActivity extends AppCompatActivity {
                     textViewsAnswers[3].setTextColor(getResources().getColor(R.color.white));
             }
         });
-        textViewNoQuestion.setText(""+1+"/"+quiz.getQuestions().size());
-        textViewQuestion.setText(quiz.getQuestions().get(0).getQuestionText());
+        textViewNoQuestion.setText(""+1+"/"+takenQuiz.getQuestions().size());
+        textViewQuestion.setText(takenQuiz.getQuestions().get(0).getQuestionText());
         for(int i = 0;i<4;i++)
-            textViewsAnswers[i].setText(""+(char)(65+i)+")"+quiz.getQuestions().get(0).getAnswers()[i]);
+            textViewsAnswers[i].setText(""+(char)(65+i)+")"+takenQuiz.getQuestions().get(0).getAnswers()[i]);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                takenQuiz.chooseAnswers(Util.getQuestionByQuestionText(textViewQuestion.getText().toString(),quiz.getQuestions()),getChosenAnswer().getChosenAnswers());
-                if(currentQuestion<quiz.getQuestions().size()) {
-                    if(Util.arraysEqual(getChosenAnswer().getChosenAnswers(),Util.getQuestionByQuestionText(textViewQuestion.getText().toString(),quiz.getQuestions()).getCorrectAnswers()))
+                takenQuiz.chooseAnswers(Util.getQuestionByQuestionText(textViewQuestion.getText().toString(),takenQuiz.getQuestions()),getChosenAnswer().getChosenAnswers());
+                if(currentQuestion<takenQuiz.getQuestions().size()) {
+                    if(Util.arraysEqual(getChosenAnswer().getChosenAnswers(),Util.getQuestionByQuestionText(textViewQuestion.getText().toString(),takenQuiz.getQuestions()).getCorrectAnswers()))
                         Log.d("panda", "onClick: "+"corect!");
                     else
                         Log.d("panda", "onClick: "+"gresit!");
                     ResetQuestion();
                 }
                 else{
-                    if(Util.getTakenQuizById(takenQuiz.getId(),student)==null)
-                        student.getTakenQuizes().add(takenQuiz);
                     startActivity(new Intent(SQuestionActivity.this,SResultActivity.class).putExtra("student",student).putExtra("takenQuizID",takenQuiz.getId()));
                 }
             }
         });
     }
     public void ResetQuestion(){
-        textViewNoQuestion.setText("" + (++currentQuestion) + "/" + quiz.getQuestions().size());
-        textViewQuestion.setText(quiz.getQuestions().get(currentQuestion - 1).getQuestionText());
+        textViewNoQuestion.setText("" + (++currentQuestion) + "/" + takenQuiz.getQuestions().size());
+        textViewQuestion.setText(takenQuiz.getQuestions().get(currentQuestion - 1).getQuestionText());
         for (int i = 0; i < 4; i++)
-            textViewsAnswers[i].setText(""+(char)(65+i)+")"+quiz.getQuestions().get(currentQuestion - 1).getAnswers()[i]);
+            textViewsAnswers[i].setText(""+(char)(65+i)+")"+takenQuiz.getQuestions().get(currentQuestion - 1).getAnswers()[i]);
         for(int i = 0;i<answer.length;i++){
             answer[i] = false;
             textViewsAnswers[i].setTextColor(getResources().getColor(R.color.white));
@@ -133,6 +129,6 @@ public class SQuestionActivity extends AppCompatActivity {
                 nr++;
             }
         }
-        return new ChosenAnswer(Util.getQuestionByQuestionText(textViewQuestion.getText().toString(),quiz.getQuestions()),chosenAnswer);
+        return new ChosenAnswer(Util.getQuestionByQuestionText(textViewQuestion.getText().toString(),takenQuiz.getQuestions()),chosenAnswer);
     }
 }
