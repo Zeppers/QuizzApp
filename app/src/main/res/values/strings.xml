@@ -7,6 +7,7 @@
     <string name="btn_any_start">Start</string>
     <string name="btn_all_logout">Log out</string>
     <string name="btn_professor_create_quiz">Create quiz</string>
+    <string name="btn_pcreatequiz_add_question">+ Add a new question</string>
 
     <string name="splashscreen_txt">Designed and developed with love by <b>Zeppers</b></string>
 
@@ -104,6 +105,7 @@
     <string name="demoquiz_head">Why do you need a code?</string>
     <string name="demoquiz_info">Every professor can create private or public quizzes. Private quizzes require a code every creator have.</string>
     <string name="demoquiz_advice">If you don\'t have a code yet and want to try a quiz without losing a try, <b>take one of the demo quizzes below.</b></string>
+    <string name="title_activity_pcreate_quiz">PCreateQuiz</string>
 
 
 </resources>

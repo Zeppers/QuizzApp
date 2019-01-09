@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PCreateQuizTwo">
+
+    <TextView
+        android:id="@+id/txtView_pcreatequiztwo_codeis"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="16dp"
+        android:text="Your code is: "
+        android:textColor="@android:color/darker_gray"
+        android:textSize="18sp"
+        app:fontFamily="@font/quicksand_bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtView_pcreatequiztwo_privatetxt" />
+
+    <TextView
+        android:id="@+id/txtView_pcreatequiztwo_code"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="8dp"
+        android:text="Code"
+        android:textColor="@color/colorAccent"
+        android:textSize="24sp"
+        app:fontFamily="@font/quicksand_bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtView_pcreatequiztwo_codeis" />
+
+    <TextView
+        android:id="@+id/txtView_pcreatequiztwo_privatetxt"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="32dp"
+        android:text="Private"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="18sp"
+        app:fontFamily="@font/quicksand_light"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtView_pcreatequiztwo_explain" />
+
+    <TextView
+        android:id="@+id/txtView_pcreatequiztwo_explain"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:text="Choose the type of the quiz you are going to create. In case of a private quiz, you will receive a code to share with the students."
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:fontFamily="@font/quicksand_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtView_pcreatequiztwo_head" />
+
+    <TextView
+        android:id="@+id/txtView_pcreatequiztwo_head"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:text="@string/btn_professor_create_quiz"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="22sp"
+        app:fontFamily="@font/quicksand_bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Switch
+        android:id="@+id/switch_pcreatequiztwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:checked="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtView_pcreatequiztwo_explain" />
+
+</android.support.constraint.ConstraintLayout>
