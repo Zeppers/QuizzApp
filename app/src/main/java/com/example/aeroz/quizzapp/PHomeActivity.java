@@ -31,8 +31,6 @@ public class PHomeActivity extends AppCompatActivity {
     private List<Quiz> privateQuizes;
     private List<Quiz> publicQuizes;
 
-    private ImageView imgArrowPrivate;
-    private ImageView imgArrowPublic;
     private ImageView imgProfile;
     private ListView listView1;
     private ListView listView2;
@@ -44,8 +42,6 @@ public class PHomeActivity extends AppCompatActivity {
         listView1 = findViewById(R.id.list_shome_publicquizzes);
         listView2 = findViewById(R.id.list_phome_privateq);
         teacher = (Teacher)getIntent().getExtras().getSerializable("teacher");
-        imgArrowPublic = findViewById(R.id.imgView_phome_ic_seepublic);
-        imgArrowPrivate = findViewById(R.id.imgView_phome_ic_seeprivate);
         privateQuizes = new ArrayList<>();
         publicQuizes = new ArrayList<>();
         for(Quiz q:teacher.getQuizes())
@@ -74,18 +70,18 @@ public class PHomeActivity extends AppCompatActivity {
             }
         });
         //////////////////
-        imgArrowPublic.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(PHomeActivity.this,PPublicActivity.class).putExtra("teacher",teacher));
-            }
-        });
-        imgArrowPrivate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(PHomeActivity.this,PPublicActivity.class).putExtra("teacher",teacher));
-            }
-        });
+//        imgArrowPublic.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(PHomeActivity.this,PPublicActivity.class).putExtra("teacher",teacher));
+//            }
+//        });
+//        imgArrowPrivate.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(PHomeActivity.this,PPublicActivity.class).putExtra("teacher",teacher));
+//            }
+//        });
 
     }
 }

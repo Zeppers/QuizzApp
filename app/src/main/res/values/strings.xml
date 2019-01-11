@@ -111,8 +111,8 @@
     <string name="shomeincorrectcode">Incorrect code!</string>
 
     <string name="demoquiz_head">Why do you need a code?</string>
-    <string name="demoquiz_info">Every professor can create private or public quizzes. Private quizzes require a code every creator have.</string>
-    <string name="demoquiz_advice">If you don\'t have a code yet and want to try a quiz without losing a try, <b>take one of the demo quizzes below.</b></string>
+    <string name="demoquiz_info">Every professor can create private or public quizzes. Private quizzes require a code every professor have.</string>
+    <string name="demoquiz_advice">If you don\'t have a code yet and want to try a quiz <b>take one of the public quizzes.</b></string>
     <string name="title_activity_pcreate_quiz">PCreateQuiz</string>
 
 
