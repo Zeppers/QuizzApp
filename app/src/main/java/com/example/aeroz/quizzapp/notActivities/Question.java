@@ -1,34 +1,37 @@
 package com.example.aeroz.quizzapp.notActivities;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Question implements Serializable {
-    private String questionText;
-    private String[] answers;
-    private int[] correctAnswers;
+    private int id;
+    private String text;
+    private List<Answer> answers = new ArrayList<>();
 
-    public Question(String questionText, String[] answers, int[] correctAnswers){
-        this.questionText = questionText;
-        this.answers = answers;
-        this.correctAnswers = correctAnswers;
+    public Question(int id, String text){
+        this.id = id;
+        this.text = text;
     }
+    public Question(int id, String text,List<Answer> answers){
+        this.id = id;
+        this.text = text;
+        this.answers = answers;
+    }
+    public int getId(){return this.id;}
+    public String getText(){return this.text;} public void setText(String value){this.text = value;}
+    public List<Answer> getAnswers(){return this.answers;} public void setAnswers(List<Answer> value){this.answers = value;}
 
-    public String getQuestionText(){return this.questionText;}
-    public void setQuestionText(String value){this.questionText = value;}
-
-    public String[] getAnswers(){return this.answers;}
-    public void setAnswers(String[] value){this.answers = value;}
-
-    public int[] getCorrectAnswers(){return this.correctAnswers;}
-    public void setCorrectAnswers(int[] value){this.correctAnswers = value;}
 
     public String toString(){
-        String answers="";
-        String correctAnswers="";
-        for(int i = 0;i<this.answers.length;i++)
-            answers+=this.answers[i]+" ";
-        for(int i =0;i<this.correctAnswers.length;i++)
-            correctAnswers+=this.correctAnswers[i];
-        return questionText+" "+answers+" "+correctAnswers;
+        StringBuilder answers = new StringBuilder();
+        for(Answer a:this.answers){
+            answers.append(a);
+        }
+        return "id:"+this.id+" text:"+this.text+" answers:"+answers.toString();
     }
 }

@@ -14,7 +14,6 @@ import java.util.List;
 public class Reader extends AsyncTask<String, Void, String> {
     @Override
     protected String doInBackground(String... strings) {
-        List<Quiz> quizes = new ArrayList<>();
         StringBuilder content = new StringBuilder();
         try {
             URL url = new URL(strings[0]);

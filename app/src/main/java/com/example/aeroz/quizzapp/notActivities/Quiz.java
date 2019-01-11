@@ -1,77 +1,116 @@
 package com.example.aeroz.quizzapp.notActivities;
 
-import android.widget.ListView;
+import com.google.gson.Gson;
 
-import com.example.aeroz.quizzapp.SplashscreenActivity;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class Quiz implements Serializable {
     protected int id;
-    protected String quizName;
+    protected String name;
     protected String description;
-    protected List<Question> questions = new ArrayList<>();
     protected int time;
     protected boolean active;
     protected boolean privat;
-    protected long code;
-    protected String creator;
+    protected int code;
+    protected List<Question> questions;
 
     public Quiz(){}
 
-    public Quiz(String quizName,String description, List<Question> questions, int time, boolean active, boolean privat, String creator){
-        this.id = new Random().nextInt(9000)+1001;
-        while(Util.IDExists(this.id,SplashscreenActivity.quizes)){
-            this.id = new Random().nextInt(9000)+1001;
-        }
-        this.quizName = quizName;
+    public Quiz(int id, String name, String description, int time, boolean active, boolean privat, int code){
+        this.id = id;
+        this.name = name;
         this.description = description;
-        this.questions = questions;
         this.time = time;
         this.active = active;
         this.privat = privat;
-        if(this.privat){
-            this.code = new Random().nextInt(9000)+1001;
-            while(Util.codeExists(this.code,SplashscreenActivity.quizes)){
-                this.code = new Random().nextInt(9000)+1001;
-            }
-        }
-        this.creator = creator;
+        this.code = code;
+    }
+    public Quiz(int id, String name, String description, int time, boolean active, boolean privat, int code, List<Question> questions){
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.time = time;
+        this.active = active;
+        this.privat = privat;
+        this.code = code;
+        this.questions = questions;
     }
 
-    public String getQuizName(){return this.quizName;}
-    public void setQuizName(String value){this.quizName = value;}
-
-    public List<Question> getQuestions(){return this.questions;}
-    public void setQuestions(List<Question> value){this.questions = value;}
-
-    public int getTime(){return this.time;}
-    public void setTime(int value){this.time = value;}
-
-    public boolean isActive(){return this.active;}
-    public void setActive(boolean value){this.active = value;}
-
-    public float timePerQuestion(){return this.time/questions.size();}
-
-    public long getCode(){return this.code;}
     public int getId(){return this.id;}
+    public String getName() {
+        return name;
+    }
 
-    public boolean isPrivat(){return this.privat;}
-    public void setPrivat(boolean value){this.privat = value;}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-    public void addQuestion(Question q){this.questions.add(q);}
+    public String getDescription() {
+        return description;
+    }
 
-    public String getCreator(){return this.creator;}
-    public void setCreator(String value){this.creator = value;}
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-    public String getDescription(){return this.description;}
-    public void setDescription(String value){this.description =value;}
+    public int getTime() {
+        return time;
+    }
 
-    public String toString(){return this.id+" "+this.description+" "+this.creator;}
+    public void setTime(int time) {
+        this.time = time;
+    }
 
-    public void setId(int value){this.id = value;}
-    public void setCode(int value){this.code = code;}
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
+    public boolean isPrivat() {
+        return privat;
+    }
+
+    public void setPrivat(boolean privat) {
+        this.privat = privat;
+    }
+
+    public int getCode() {
+        return code;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
+    }
+
+    public List<Question> getQuestions() {
+        return questions;
+    }
+
+    public void setQuestions(List<Question> questions) {
+        this.questions = questions;
+    }
+
+    public static Quiz retrieveFromJSONString(String s){
+        Quiz quiz = null;
+        Gson gson = new Gson();
+        quiz = gson.fromJson(s,Quiz.class);
+
+        return quiz;
+    }
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        for(Question q:this.questions)
+            sb.append(q);
+        return "id:"+this.id+" name:"+this.name+" description:"+this.description+" questions:"+sb.toString();
+    }
+
 }
