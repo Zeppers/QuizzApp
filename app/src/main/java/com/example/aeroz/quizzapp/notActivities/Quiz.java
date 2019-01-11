@@ -110,7 +110,7 @@ public class Quiz implements Serializable {
         StringBuilder sb = new StringBuilder();
         for(Question q:this.questions)
             sb.append(q);
-        return "id:"+this.id+" name:"+this.name+" description:"+this.description+" questions:"+sb.toString();
+        return "id:"+this.id+" name:"+this.name+" description:"+this.description+" time:"+this.time+" active:"+this.active+" privat:"+this.privat+" code:"+ this.code+" questions:"+sb.toString();
     }
 
 }

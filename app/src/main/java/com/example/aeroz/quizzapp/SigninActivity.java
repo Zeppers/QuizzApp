@@ -31,9 +31,22 @@ public class SigninActivity extends AppCompatActivity {
 
         editTextEmail = findViewById(R.id.edtText_signin_email);
         editTextPassword = findViewById(R.id.edtText_signin_password);
-        editTextEmail.setText("teacherEmail1@prof.ase.ro");
-        editTextPassword.setText("teacherPassword1");
         button = findViewById(R.id.btn_signin_continue);
+
+        findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editTextEmail.setText("petrecosmin16@stud.ase.ro");
+                editTextPassword.setText("password1");
+            }
+        });
+        findViewById(R.id.button2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editTextEmail.setText("teacherEmail1@prof.ase.ro");
+                editTextPassword.setText("teacherPassword1");
+            }
+        });
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
