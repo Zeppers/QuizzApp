@@ -15,6 +15,7 @@ public class Answer implements Serializable {
     private String text;
     private boolean isCorrect;
     public Answer(){}
+
     public Answer(int id, String text, boolean isCorrect){
         this.id = id;
         this.text = text;
