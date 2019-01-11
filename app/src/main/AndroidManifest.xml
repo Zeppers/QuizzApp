@@ -31,7 +31,8 @@
         <activity android:name=".SQuizPreviewActivity" />
         <activity android:name=".DemoQuizActivity" />
         <activity android:name=".PCreateQuiz" />
-        <activity android:name=".PCreateQuizTwo"></activity>
+        <activity android:name=".PCreateQuizTwo" />
+        <activity android:name=".PAddQuestion"></activity>
     </application>
 
 </manifest>

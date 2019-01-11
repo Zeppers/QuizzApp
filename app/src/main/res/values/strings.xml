@@ -8,6 +8,8 @@
     <string name="btn_all_logout">Log out</string>
     <string name="btn_professor_create_quiz">Create quiz</string>
     <string name="btn_pcreatequiz_add_question">+ Add a new question</string>
+    <string name="btn_paddquestion_add_question">Add question</string>
+    <string name="btn_pcreatequiz_nextstep">Next step</string>
 
     <string name="splashscreen_txt">Designed and developed with love by <b>Zeppers</b></string>
 
@@ -67,6 +69,12 @@
     <string name="pquizdetail_statistics_title">Statistics</string>
     <string name="pquizdetail_statistics_nocommits">Number of commits</string>
 
+    <string name="paddquestion_head">Add a new question</string>
+    <string name="paddquestion_question">Question</string>
+    <string name="paddquestion_answer1">First answer</string>
+    <string name="paddquestion_answer2">Second answer</string>
+    <string name="paddquestion_answer3">Third answer</string>
+    <string name="paddquestion_answer4">Fourth answer</string>
 
     <string name="shome_introd">Hello, student!</string>
     <string name="shome_explain">To take a quiz you need to type down a code </string>

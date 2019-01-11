@@ -6,6 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".PCreateQuizTwo">
 
+    <ImageView
+        android:id="@+id/imgView_pcreatequiztwo_ic_back"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_back" />
+
     <TextView
         android:id="@+id/txtView_pcreatequiztwo_codeis"
         android:layout_width="0dp"

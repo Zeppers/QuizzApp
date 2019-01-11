@@ -20,6 +20,8 @@ public class SHomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shome);
 
+        
+
     }
 
 }
