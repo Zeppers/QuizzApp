@@ -63,18 +63,18 @@ public class SplashscreenActivity extends AppCompatActivity {
 //        };
 //        httpRequestMaker.execute("GET","http://188.25.199.62:8000/quizes/1");
 
-        String quizDB = gson.toJson(new QuizDB(quiz.getId(),quiz.getName(),quiz.getDescription(),quiz.getTime(),quiz.isActive(),quiz.isPrivat(),quiz.getCode(),2));
-        HttpRequestMaker httpRequestMaker2 = new HttpRequestMaker(){
-            @Override
-            protected  void onPostExecute(String s){
-
-                Quiz q = gson.fromJson(s,Quiz.class);
-                Log.d("panda", "onPostExecute: "+q);
-
-            }
-        };
-
-        httpRequestMaker2.execute("POST","http://188.25.199.62:8000/quizes/1",gson.toJson(quiz));
+//        String quizDB = gson.toJson(new QuizDB(quiz.getId(),quiz.getName(),quiz.getDescription(),quiz.getTime(),quiz.isActive(),quiz.isPrivat(),quiz.getCode(),2));
+//        HttpRequestMaker httpRequestMaker2 = new HttpRequestMaker(){
+//            @Override
+//            protected  void onPostExecute(String s){
+//
+//                Quiz q = gson.fromJson(s,Quiz.class);
+//                Log.d("panda", "onPostExecute: "+q);
+//
+//            }
+//        };
+//
+//        httpRequestMaker2.execute("POST","http://188.25.199.62:8000/quizes/1",gson.toJson(quiz));
 
         Thread thread = new Thread(){
             @Override
