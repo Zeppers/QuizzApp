@@ -1,6 +1,8 @@
 package com.example.aeroz.quizzapp.notActivities;
 
-public class TakenQuiz {
+import java.io.Serializable;
+
+public class TakenQuiz implements Serializable {
     private float score;
     private int remainingTries;
     private Quiz quiz;

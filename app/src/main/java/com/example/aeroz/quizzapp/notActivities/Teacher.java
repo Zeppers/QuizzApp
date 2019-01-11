@@ -1,9 +1,10 @@
 package com.example.aeroz.quizzapp.notActivities;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Teacher {
+public class Teacher implements Serializable {
     private int id;
 
     public int getId() {
@@ -59,6 +60,13 @@ public class Teacher {
         this.name = name;
         this.email = email;
         this.password = password;
+    }
+
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        for(Quiz q:this.quizes)
+            sb.append(q);
+        return "id:"+this.id+" email:"+this.email+" password:"+this.password +" quizes:"+sb;
     }
 
 }
