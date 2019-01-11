@@ -1,8 +1,9 @@
 package com.example.aeroz.quizzapp.notActivities;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Student {
+public class Student implements Serializable {
     private int id;
     private String name;
     private String email;
@@ -52,6 +53,9 @@ public class Student {
         this.email = email;
         this.password = password;
         this.takenQuizes = takenQuizes;
+    }
+    public String toString(){
+        return "id:" + this.id+" name:"+this.name+" email:" + this.email+ " password:" + this.password;
     }
 
 }

@@ -38,9 +38,20 @@ public class HttpRequestMaker extends AsyncTask<String, Void, String> {
                 connection.setDoInput(true);
                 connection.setRequestProperty("Content-Type","application/json");
 
-                OutputStream outputStream = connection.getOutputStream();
-                outputStream.write(strings[2].toString().getBytes("UTF-8"));
-                response = new StringBuilder(connection.getResponseMessage());
+                if(strings[1].contains("login")){
+                    OutputStream outputStream = connection.getOutputStream();
+                    outputStream.write(strings[2].toString().getBytes("UTF-8"));
+
+                    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                    response = new StringBuilder();
+                    while((line=bufferedReader.readLine())!=null)
+                        response.append(line);
+                }
+                else{
+                    OutputStream outputStream = connection.getOutputStream();
+                    outputStream.write(strings[2].toString().getBytes("UTF-8"));
+                    response = new StringBuilder(connection.getResponseMessage());
+                }
             }
 
         } catch (IOException e) {
