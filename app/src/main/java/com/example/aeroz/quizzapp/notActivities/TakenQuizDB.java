@@ -3,7 +3,7 @@ package com.example.aeroz.quizzapp.notActivities;
 import java.io.Serializable;
 
 public class TakenQuizDB implements Serializable {
-    private float score;
+    private int score;
     private int remainingTries;
     private int studentId;
     private int quizId;
@@ -22,7 +22,7 @@ public class TakenQuizDB implements Serializable {
     public int getQuizId(){return this.quizId;}
 
     public void setRemainingTries(int value){this.remainingTries= value;}
-    public void setScore(float value){this.score = value;}
+    public void setScore(int value){this.score = value;}
     public void takeTry(){this.remainingTries--;}
 
     public String toString(){

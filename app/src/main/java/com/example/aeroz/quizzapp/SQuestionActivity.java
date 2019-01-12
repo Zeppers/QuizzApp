@@ -106,15 +106,13 @@ public class SQuestionActivity extends AppCompatActivity {
                     score = (float)noCorrect/quiz.getQuestions().size();
                     String[] scr=new String[2];scr = String.format("%.2f",score).split(",");
                     score=Float.parseFloat(scr[0]+"."+scr[1])*100;
-                    takenQuizDB.setScore(score);
-                    new HttpRequestMaker().execute("POST","http://188.25.199.62:8000/takenQuizez",
+                    takenQuizDB.setScore((int)score);
+                    Log.d("yeyeye", "onClick: ");
+                    new HttpRequestMaker().execute("POST","http://188.25.199.62:8000/takenQuizes",
                             new Gson().toJson(takenQuizDB));
                     startActivity(new Intent(SQuestionActivity.this,SResultActivity.class)
                     .putExtra("student",student).putExtra("score",score).putExtra("quiz",quiz)
                     .putExtra("noCorrect",noCorrect));
-                    Log.d("pandaaa", "onClick: "+takenQuizDB);
-                    Log.d("pandaaa", "onClick: "+noCorrect);
-                    Log.d("pandaaa", "onClick: "+score);
                 }
                 else{
                     //verifyAnswer();
