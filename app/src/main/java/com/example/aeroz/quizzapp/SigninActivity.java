@@ -1,5 +1,6 @@
 package com.example.aeroz.quizzapp;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -36,8 +37,8 @@ public class SigninActivity extends AppCompatActivity {
         findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                editTextEmail.setText("petrecosmin16@stud.ase.ro");
-                editTextPassword.setText("password1");
+                editTextEmail.setText("petrecosmin@stud.ase.ro");
+                editTextPassword.setText("pass100");
             }
         });
         findViewById(R.id.button2).setOnClickListener(new View.OnClickListener() {

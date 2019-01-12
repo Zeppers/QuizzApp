@@ -1,13 +1,20 @@
 package com.example.aeroz.quizzapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.aeroz.quizzapp.notActivities.HttpRequestMaker;
 import com.example.aeroz.quizzapp.notActivities.Quiz;
 import com.example.aeroz.quizzapp.notActivities.Student;
+import com.example.aeroz.quizzapp.notActivities.TakenQuiz;
+import com.example.aeroz.quizzapp.notActivities.TakenQuizDB;
+import com.google.gson.Gson;
 
 
 public class SQuizPreviewActivity extends AppCompatActivity {
@@ -15,7 +22,7 @@ public class SQuizPreviewActivity extends AppCompatActivity {
     private Quiz quiz;
     private Student student;
     private String creatorName;
-
+    private TakenQuizDB takenQuizDB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +40,7 @@ public class SQuizPreviewActivity extends AppCompatActivity {
 
         quiz=(Quiz) getIntent().getExtras().getSerializable("quiz");
         student = (Student)getIntent().getExtras().getSerializable("student");
+        Log.d("ehehe", "onCreate: "+student);
 
         quizName.setText(quiz.getName());
         quizTimePerQustion.setText(String.valueOf(quiz.getTime()/quiz.getQuestions().size()));
@@ -43,8 +51,36 @@ public class SQuizPreviewActivity extends AppCompatActivity {
         backIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                     SQuizPreviewActivity.this.finish();
+            }
+        });
+        findViewById(R.id.btn_squizpreview_start).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new HttpRequestMaker(){
+                    @Override
+                    public void onPostExecute(String s){
+                        TakenQuizDB[] takenQuizes = new Gson().fromJson(s,TakenQuizDB[].class);
+                        if(takenQuizes.length!=0){
+                            takenQuizDB = takenQuizes[0];
+                            Log.d("testolini", "onPostExecute: "+takenQuizDB);
+                            if(takenQuizDB.getRemainingTries()!=0){
+                                takenQuizDB.takeTry();
+                                new HttpRequestMaker().execute("POST","http://188.25.199.62:8000/takenQuizes",new Gson().toJson(takenQuizDB));
+                                startActivity(new Intent(SQuizPreviewActivity.this,SQuestionActivity.class)
+                                        .putExtra("student",student).putExtra("quiz",quiz).putExtra("takenQuizDB",takenQuizDB));
+                            }
+                            else{
+                                Toast.makeText(SQuizPreviewActivity.this,R.string.shometries,Toast.LENGTH_LONG).show();
+                            }
+                        }
+                        else{
+                            new HttpRequestMaker().execute("POST","http://188.25.199.62:8000/takenQuizes",new Gson()
+                                    .toJson(new TakenQuizDB(0,2,student.getId(),quiz.getId())));
+                        }
+
+                    }
+                }.execute("GET","http://188.25.199.62:8000/takenQuizes/?studentId="+student.getId()+"&quizId="+quiz.getId());
             }
         });
 

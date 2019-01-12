@@ -49,12 +49,12 @@ public class SHomeActivity extends AppCompatActivity {
         whyNeedCode = findViewById(R.id.txtView_shome_why);
         button = findViewById(R.id.btn_shome_continue);
         publicQuizes = new ArrayList<>();
-
+        student = (Student)getIntent().getExtras().getSerializable("student");
+        Log.d("yeyeye", "onCreate: "+student);
         ////////////////////
         HttpRequestMaker httpRequestMaker = new HttpRequestMaker() {
             @Override
             public void onPostExecute(String s){
-                student = (Student)getIntent().getExtras().getSerializable("student");
                 publicQuizes = Arrays.asList(new Gson().fromJson(s,Quiz[].class));
 
                 QuizAdapter quizAdapter = new QuizAdapter(SHomeActivity.this,android.R.layout.simple_list_item_2,publicQuizes);
