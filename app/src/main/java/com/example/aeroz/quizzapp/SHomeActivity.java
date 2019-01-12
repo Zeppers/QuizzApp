@@ -5,9 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -20,10 +18,6 @@ import com.example.aeroz.quizzapp.notActivities.QuizAdapter;
 import com.example.aeroz.quizzapp.notActivities.Student;
 import com.example.aeroz.quizzapp.notActivities.Util;
 import com.google.gson.Gson;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -44,7 +38,7 @@ public class SHomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shome);
         //INITIALIZE FIELDS
-        listView = findViewById(R.id.list_shome_publicquizzes);
+        listView = findViewById(R.id.list_shome_publicq);
         editText = findViewById(R.id.edtText_shome_code);
         whyNeedCode = findViewById(R.id.txtView_shome_why);
         button = findViewById(R.id.btn_shome_continue);

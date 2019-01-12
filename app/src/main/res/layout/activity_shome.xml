@@ -7,7 +7,7 @@
     tools:context=".SHomeActivity">
 
     <ListView
-        android:id="@+id/list_shome_publicquizzes"
+        android:id="@+id/list_shome_publicq"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"

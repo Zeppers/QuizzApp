@@ -62,7 +62,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
-        android:id="@+id/list_shome_publicquizzes"
+        android:id="@+id/list_shome_publicq"
         android:layout_width="0dp"
         android:layout_height="124dp"
         android:layout_marginStart="8dp"
@@ -99,7 +99,7 @@
         android:textSize="18sp"
         app:fontFamily="@font/quicksand_regular"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/list_shome_publicquizzes" />
+        app:layout_constraintTop_toBottomOf="@+id/list_shome_publicq" />
 
     <ListView
         android:id="@+id/list_phome_privateq"

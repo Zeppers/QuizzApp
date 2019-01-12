@@ -110,6 +110,7 @@ public class SQuestionActivity extends AppCompatActivity {
                     Log.d("yeyeye", "onClick: ");
                     new HttpRequestMaker().execute("POST","http://188.25.199.62:8000/takenQuizes",
                             new Gson().toJson(takenQuizDB));
+                    SQuestionActivity.this.finish();
                     startActivity(new Intent(SQuestionActivity.this,SResultActivity.class)
                     .putExtra("student",student).putExtra("score",score).putExtra("quiz",quiz)
                     .putExtra("noCorrect",noCorrect));

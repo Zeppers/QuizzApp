@@ -33,6 +33,7 @@
         <activity android:name=".PCreateQuiz" />
         <activity android:name=".PCreateQuizTwo" />
         <activity android:name=".PAddQuestion"></activity>
+        <activity android:name=".PProfileActivity"></activity>
     </application>
 
 </manifest>

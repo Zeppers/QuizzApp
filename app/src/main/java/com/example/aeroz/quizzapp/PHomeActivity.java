@@ -1,28 +1,20 @@
 package com.example.aeroz.quizzapp;
 
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.TwoLineListItem;
 
-import com.example.aeroz.quizzapp.notActivities.HttpRequestMaker;
 import com.example.aeroz.quizzapp.notActivities.Quiz;
 import com.example.aeroz.quizzapp.notActivities.QuizAdapter;
 import com.example.aeroz.quizzapp.notActivities.Teacher;
 import com.example.aeroz.quizzapp.notActivities.Util;
 
-import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class PHomeActivity extends AppCompatActivity {
@@ -39,7 +31,7 @@ public class PHomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_phome);
         //INITIALIZE FIELDS
-        listView1 = findViewById(R.id.list_shome_publicquizzes);
+        listView1 = findViewById(R.id.list_shome_publicq);
         listView2 = findViewById(R.id.list_phome_privateq);
         teacher = (Teacher)getIntent().getExtras().getSerializable("teacher");
         privateQuizes = new ArrayList<>();
@@ -67,6 +59,13 @@ public class PHomeActivity extends AppCompatActivity {
                 TextView text1 = view.findViewById(android.R.id.text2);
                 Quiz quiz = Util.getQuizById(Integer.parseInt(text1.getText().toString()),teacher.getQuizes());
                 startActivity(new Intent(PHomeActivity.this,PQuizDetailActivity.class).putExtra("quiz",quiz));
+            }
+        });
+        findViewById(R.id.ic_phome_profile).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(PHomeActivity.this,PProfileActivity.class)
+                .putExtra("teacher",teacher));
             }
         });
         //////////////////

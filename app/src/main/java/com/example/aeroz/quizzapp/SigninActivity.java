@@ -44,8 +44,8 @@ public class SigninActivity extends AppCompatActivity {
         findViewById(R.id.button2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                editTextEmail.setText("teacherEmail1@prof.ase.ro");
-                editTextPassword.setText("teacherPassword1");
+                editTextEmail.setText("zamfirescucatalin@prof.ase.ro");
+                editTextPassword.setText("pass001");
             }
         });
 
