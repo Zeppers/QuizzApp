@@ -90,4 +90,5 @@ public class OnboardingActivity extends AppCompatActivity {
 
         return super.onKeyDown(keyCode, event);
     }
+
 }

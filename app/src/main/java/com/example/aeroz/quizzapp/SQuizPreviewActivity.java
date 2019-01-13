@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -55,7 +56,7 @@ public class SQuizPreviewActivity extends AppCompatActivity {
         backIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    SQuizPreviewActivity.this.finish();
+                    startActivity(new Intent(SQuizPreviewActivity.this,SHomeActivity.class).putExtra("student",student));
             }
         });
         findViewById(R.id.btn_squizpreview_start).setOnClickListener(new View.OnClickListener() {
@@ -90,4 +91,13 @@ public class SQuizPreviewActivity extends AppCompatActivity {
         });
 
     }
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)  {
+        if (keyCode == KeyEvent.KEYCODE_BACK ) {
+
+        }
+
+        return super.onKeyDown(keyCode, event);
+    }
+
 }

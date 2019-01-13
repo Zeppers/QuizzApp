@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -63,6 +64,20 @@ public class SProfileActivity extends AppCompatActivity {
         });
 
         txt_quiz_history_no.setText("Quiz history ( "+String.valueOf(student.getTakenQuizes().size())+" taken by now )");
-
+        findViewById(R.id.btn_sprofile_logout).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SProfileActivity.this,SigninActivity.class));
+            }
+        });
     }
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)  {
+        if (keyCode == KeyEvent.KEYCODE_BACK ) {
+
+        }
+
+        return super.onKeyDown(keyCode, event);
+    }
+
 }
