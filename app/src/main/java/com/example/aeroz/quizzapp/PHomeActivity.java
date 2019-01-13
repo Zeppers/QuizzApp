@@ -47,14 +47,14 @@ public class PHomeActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Quiz quiz = publicQuizes.get(position);
-                startActivity(new Intent(PHomeActivity.this,PQuizDetailActivity.class).putExtra("quiz",quiz));
+                startActivity(new Intent(PHomeActivity.this,PQuizDetailActivity.class).putExtra("quiz",quiz).putExtra("teacher",teacher));
             }
         });
         listView2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Quiz quiz = privateQuizes.get(position);
-                startActivity(new Intent(PHomeActivity.this,PQuizDetailActivity.class).putExtra("quiz",quiz));
+                startActivity(new Intent(PHomeActivity.this,PQuizDetailActivity.class).putExtra("quiz",quiz).putExtra("teacher",teacher));
             }
         });
         findViewById(R.id.ic_phome_profile).setOnClickListener(new View.OnClickListener() {
