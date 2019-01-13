@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,7 +17,6 @@ import com.example.aeroz.quizzapp.notActivities.HttpRequestMaker;
 import com.example.aeroz.quizzapp.notActivities.Quiz;
 import com.example.aeroz.quizzapp.notActivities.QuizAdapter;
 import com.example.aeroz.quizzapp.notActivities.Student;
-import com.example.aeroz.quizzapp.notActivities.Util;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
@@ -26,13 +26,14 @@ import java.util.List;
 
 public class SHomeActivity extends AppCompatActivity {
     private ListView listView;
+    private ImageView ic_home;
     private EditText editText;
     private TextView whyNeedCode;
-    private Button demoButton;
     private Button button;
     private Student student;
     private List<Quiz> publicQuizes;
     private int code;
+    private Quiz quiz;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +42,7 @@ public class SHomeActivity extends AppCompatActivity {
         listView = findViewById(R.id.list_shome_publicq);
         editText = findViewById(R.id.edtText_shome_code);
         whyNeedCode = findViewById(R.id.txtView_shome_why);
+        ic_home=findViewById(R.id.ic_shome_profile);
         button = findViewById(R.id.btn_shome_continue);
         publicQuizes = new ArrayList<>();
         student = (Student)getIntent().getExtras().getSerializable("student");
@@ -52,15 +54,24 @@ public class SHomeActivity extends AppCompatActivity {
 
                 QuizAdapter quizAdapter = new QuizAdapter(SHomeActivity.this,android.R.layout.simple_list_item_2,publicQuizes);
                 listView.setAdapter(quizAdapter);
+
                 listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 //                        TextView tv = view.findViewById(android.R.id.text2);
 //                        int ID = Integer.parseInt(tv.getText().toString());
 //                        Quiz quiz= Util.getQuizById(ID,publicQuizes);
-                        Quiz quiz = publicQuizes.get(position);
-                            startActivity(new Intent(SHomeActivity.this,SQuizPreviewActivity.class)
-                                    .putExtra("quiz",quiz).putExtra("student",student));
+                        quiz = publicQuizes.get(position);
+                        new HttpRequestMaker(){
+                            @Override
+                            public void onPostExecute(String s){
+                                Log.d("testosteron", "onPostExecute: "+s);
+                                startActivity(new Intent(SHomeActivity.this,SQuizPreviewActivity.class)
+                                        .putExtra("quiz",quiz).putExtra("student",student));
+                            }
+                        }
+                                .execute("POST","http://188.25.199.62:8000/teacherName",new Gson().toJson(quiz));
+
                     }
                 });
 
@@ -85,5 +96,21 @@ public class SHomeActivity extends AppCompatActivity {
             }
         };
         httpRequestMaker.execute("GET","http://188.25.199.62:8000/quizes/?privat=0");
+
+
+        whyNeedCode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(SHomeActivity.this,DemoQuizActivity.class).putExtra("student",student));
+            }
+        });
+
+        ic_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SHomeActivity.this,SProfileActivity.class).putExtra("student",student));
+            }
+        });
     }
 }

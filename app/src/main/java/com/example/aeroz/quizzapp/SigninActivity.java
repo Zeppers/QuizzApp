@@ -3,6 +3,7 @@ package com.example.aeroz.quizzapp;
 import android.app.Activity;
 import android.app.Application;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -36,6 +37,10 @@ public class SigninActivity extends AppCompatActivity {
         editTextPassword = findViewById(R.id.edtText_signin_password);
         button = findViewById(R.id.btn_signin_continue);
 
+        SharedPreferences sharedPreferences = getSharedPreferences("account",MODE_PRIVATE);
+        editTextEmail.setText(sharedPreferences.getString("email",""));
+        editTextPassword.setText(sharedPreferences.getString("password",""));
+
         findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,6 +68,7 @@ public class SigninActivity extends AppCompatActivity {
                         @Override
                         public void onPostExecute(String s){
                             Student student = new Gson().fromJson(s,Student.class);
+                            getSharedPreferences("account",MODE_PRIVATE).edit().putString("email",student.getEmail()).putString("password",student.getPassword()).apply();
                             startActivity(new Intent(SigninActivity.this,SHomeActivity.class).putExtra("student",student));
                         }
                     };
@@ -73,6 +79,7 @@ public class SigninActivity extends AppCompatActivity {
                         @Override
                         public void onPostExecute(String s){
                             Teacher teacher = new Gson().fromJson(s,Teacher.class);
+                            getSharedPreferences("account",MODE_PRIVATE).edit().putString("email",teacher.getEmail()).putString("password",teacher.getPassword()).apply();
                             startActivity(new Intent(SigninActivity.this,PHomeActivity.class).putExtra("teacher",teacher));
                         }
                     };

@@ -38,7 +38,7 @@ public class HttpRequestMaker extends AsyncTask<String, Void, String> {
                 connection.setDoInput(true);
                 connection.setRequestProperty("Content-Type","application/json");
 
-                if(strings[1].contains("login")){
+                if(strings[1].contains("login")||strings[1].contains("teacherName")){
                     OutputStream outputStream = connection.getOutputStream();
                     outputStream.write(strings[2].toString().getBytes("UTF-8"));
 

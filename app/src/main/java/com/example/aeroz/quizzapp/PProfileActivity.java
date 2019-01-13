@@ -11,12 +11,8 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.aeroz.quizzapp.notActivities.Quiz;
 import com.example.aeroz.quizzapp.notActivities.QuizAdapter;
 import com.example.aeroz.quizzapp.notActivities.Teacher;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class PProfileActivity extends AppCompatActivity {
     private Teacher teacher;

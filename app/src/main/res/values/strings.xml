@@ -113,7 +113,7 @@
 
     <string name="demoquiz_head">Why do you need a code?</string>
     <string name="demoquiz_info">Every professor can create private or public quizzes. Private quizzes require a code every professor have.</string>
-    <string name="demoquiz_advice">If you don\'t have a code yet and want to try a quiz <b>take one of the public quizzes.</b></string>
+    <string name="demoquiz_advice">If you don\'t have a code yet and have to take a quiz <b>speak to your teacher to get the code.</b></string>
     <string name="title_activity_pcreate_quiz">PCreateQuiz</string>
 
 
