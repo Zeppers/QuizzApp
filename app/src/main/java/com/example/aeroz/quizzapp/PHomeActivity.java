@@ -48,16 +48,14 @@ public class PHomeActivity extends AppCompatActivity {
         listView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                TextView text1 = view.findViewById(android.R.id.text2);
-                Quiz quiz = Util.getQuizById(Integer.parseInt(text1.getText().toString()),teacher.getQuizes());
+                Quiz quiz = publicQuizes.get(position);
                 startActivity(new Intent(PHomeActivity.this,PQuizDetailActivity.class).putExtra("quiz",quiz));
             }
         });
         listView2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                TextView text1 = view.findViewById(android.R.id.text2);
-                Quiz quiz = Util.getQuizById(Integer.parseInt(text1.getText().toString()),teacher.getQuizes());
+                Quiz quiz = privateQuizes.get(position);
                 startActivity(new Intent(PHomeActivity.this,PQuizDetailActivity.class).putExtra("quiz",quiz));
             }
         });
@@ -68,19 +66,6 @@ public class PHomeActivity extends AppCompatActivity {
                 .putExtra("teacher",teacher));
             }
         });
-        //////////////////
-//        imgArrowPublic.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(PHomeActivity.this,PPublicActivity.class).putExtra("teacher",teacher));
-//            }
-//        });
-//        imgArrowPrivate.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(PHomeActivity.this,PPublicActivity.class).putExtra("teacher",teacher));
-//            }
-//        });
 
     }
 }

@@ -44,7 +44,6 @@ public class SHomeActivity extends AppCompatActivity {
         button = findViewById(R.id.btn_shome_continue);
         publicQuizes = new ArrayList<>();
         student = (Student)getIntent().getExtras().getSerializable("student");
-        Log.d("yeyeye", "onCreate: "+student);
         ////////////////////
         HttpRequestMaker httpRequestMaker = new HttpRequestMaker() {
             @Override
@@ -56,9 +55,10 @@ public class SHomeActivity extends AppCompatActivity {
                 listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        TextView tv = view.findViewById(android.R.id.text2);
-                        int ID = Integer.parseInt(tv.getText().toString());
-                        Quiz quiz= Util.getQuizById(ID,publicQuizes);
+//                        TextView tv = view.findViewById(android.R.id.text2);
+//                        int ID = Integer.parseInt(tv.getText().toString());
+//                        Quiz quiz= Util.getQuizById(ID,publicQuizes);
+                        Quiz quiz = publicQuizes.get(position);
                             startActivity(new Intent(SHomeActivity.this,SQuizPreviewActivity.class)
                                     .putExtra("quiz",quiz).putExtra("student",student));
                     }
@@ -84,7 +84,6 @@ public class SHomeActivity extends AppCompatActivity {
                 });
             }
         };
-
         httpRequestMaker.execute("GET","http://188.25.199.62:8000/quizes/?privat=0");
     }
 }

@@ -3,7 +3,9 @@ package com.example.aeroz.quizzapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -37,11 +39,21 @@ public class PProfileActivity extends AppCompatActivity {
         listView = findViewById(R.id.list_pprofile_drafts);
         close = findViewById(R.id.imgView_pprofile_ic_close);
 
-        textView1.setText(""+getPublic().size()+" public quizzes");
-        textView2.setText(""+getPrivate().size()+" private quizzes");
+        textView1.setText(""+teacher.getPublicQuizes().size()+" public quizzes");
+        textView2.setText(""+teacher.getPrivateQuizes().size()+" private quizzes");
 
-        QuizAdapter quizAdapter = new QuizAdapter(PProfileActivity.this,android.R.layout.simple_list_item_2,getInactive());
+        QuizAdapter quizAdapter = new QuizAdapter(PProfileActivity.this,android.R.layout.simple_list_item_2,teacher.getInactiveQuizes());
         listView.setAdapter(quizAdapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                startActivity(new Intent(PProfileActivity.this,PCreateQuizTwo.class)
+                .putExtra("teacher",teacher)
+                .putExtra("quiz",teacher.getInactiveQuizes().get(position))
+                .putExtra("index",position));
+            }
+        });
 
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,26 +75,14 @@ public class PProfileActivity extends AppCompatActivity {
             }
         });
     }
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)  {
+        if (keyCode == KeyEvent.KEYCODE_BACK ) {
+            startActivity(new Intent(PProfileActivity.this,PHomeActivity.class).putExtra("teacher",teacher));
+            return true;
+        }
 
-    public List<Quiz> getPublic(){
-        List<Quiz> publics = new ArrayList<>();
-        for(Quiz q:teacher.getQuizes())
-            if(!q.isPrivat()&&q.isActive())
-                publics.add(q);
-        return publics;
+        return super.onKeyDown(keyCode, event);
     }
-    public List<Quiz> getPrivate(){
-        List<Quiz> privates = new ArrayList<>();
-        for(Quiz q:teacher.getQuizes())
-            if(q.isPrivat()&&q.isActive())
-                privates.add(q);
-        return privates;
-    }
-    public List<Quiz> getInactive(){
-        List<Quiz> inactives = new ArrayList<>();
-        for(Quiz q:teacher.getQuizes())
-            if(!q.isActive())
-                inactives.add(q);
-        return inactives;
-    }
+
 }

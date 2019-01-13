@@ -115,7 +115,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Switch
-        android:id="@+id/switch_pcreatequiztwo"
+        android:id="@+id/switch_pcreatequiztwo_private"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -124,5 +124,51 @@
         android:checked="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtView_pcreatequiztwo_explain" />
+
+    <TextView
+        android:id="@+id/txtView_pcreatequiztwo_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="36dp"
+        android:text="time"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtView_pcreatequiztwo_code" />
+
+    <EditText
+        android:id="@+id/edtTxt_pcreatequiztwo_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginLeft="44dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        app:layout_constraintStart_toEndOf="@+id/txtView_pcreatequiztwo_time"
+        app:layout_constraintTop_toBottomOf="@+id/txtView_pcreatequiztwo_code" />
+
+    <TextView
+        android:id="@+id/txtView_pcreatequiztwo_active"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="48dp"
+        android:text="Active"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtView_pcreatequiztwo_time" />
+
+    <Switch
+        android:id="@+id/switch_pcreatequiztwo_active"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:checked="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtTxt_pcreatequiztwo_time" />
 
 </android.support.constraint.ConstraintLayout>

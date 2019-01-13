@@ -27,4 +27,5 @@ public class QuizDB {
         this.code = quiz.getCode();
         this.teacherId = teacherId;
     }
+    public int getCode(){ return this.code;}
 }

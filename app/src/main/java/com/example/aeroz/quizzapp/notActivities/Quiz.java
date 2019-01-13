@@ -20,7 +20,9 @@ public class Quiz implements Serializable {
     protected int code;
     protected List<Question> questions;
 
-    public Quiz(){}
+    public Quiz(){
+        this.questions = new ArrayList<>();
+    }
 
     public Quiz(int id, String name, String description, int time, boolean active, boolean privat, int code){
         this.id = id;

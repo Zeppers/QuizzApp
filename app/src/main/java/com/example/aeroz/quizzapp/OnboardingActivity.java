@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
 import android.transition.Slide;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -79,4 +80,14 @@ public class OnboardingActivity extends AppCompatActivity {
 
         }
     };
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)  {
+        if (keyCode == KeyEvent.KEYCODE_BACK ) {
+            OnboardingActivity.this.finish();
+            System.exit(0);
+            return true;
+        }
+
+        return super.onKeyDown(keyCode, event);
+    }
 }

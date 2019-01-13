@@ -26,7 +26,7 @@ public class QuizAdapter extends ArrayAdapter<Quiz> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent){
-        int id = getItem(position).getId();
+        String description = getItem(position).getDescription();
         String name = getItem(position).getName();
 
         LayoutInflater inflater = LayoutInflater.from(mContext);
@@ -36,7 +36,7 @@ public class QuizAdapter extends ArrayAdapter<Quiz> {
         TextView tv2 = (TextView)convertView.findViewById(android.R.id.text2);
 
         tv1.setText(name);
-        tv2.setText(String.valueOf(id));
+        tv2.setText(String.valueOf(description));
         return convertView;
     }
 }

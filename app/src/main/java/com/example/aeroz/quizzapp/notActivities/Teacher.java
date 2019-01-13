@@ -69,4 +69,26 @@ public class Teacher implements Serializable {
         return "id:"+this.id+" email:"+this.email+" password:"+this.password +" quizes:"+sb;
     }
 
+    public List<Quiz> getPrivateQuizes(){
+        List<Quiz> privates = new ArrayList<>();
+        for(Quiz q:this.quizes)
+            if(q.isPrivat())
+                privates.add(q);
+        return privates;
+    }
+    public List<Quiz> getPublicQuizes(){
+        List<Quiz> publics = new ArrayList<>();
+        for(Quiz q:this.quizes)
+            if(!q.isPrivat())
+                publics.add(q);
+        return publics;
+    }
+    public List<Quiz> getInactiveQuizes(){
+        List<Quiz> inactives = new ArrayList<>();
+        for(Quiz q:this.quizes)
+            if(!q.isActive())
+                inactives.add(q);
+        return inactives;
+    }
+
 }
