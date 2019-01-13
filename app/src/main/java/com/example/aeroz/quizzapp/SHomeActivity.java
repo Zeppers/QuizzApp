@@ -83,9 +83,16 @@ public class SHomeActivity extends AppCompatActivity {
                         new HttpRequestMaker(){
                             public void onPostExecute(String s){
                                 try{
-                                    Quiz quiz = new Gson().fromJson(s,Quiz[].class)[0];
-                                    startActivity(new Intent(SHomeActivity.this,SQuizPreviewActivity.class)
-                                            .putExtra("student",student).putExtra("quiz",quiz));
+                                    quiz = new Gson().fromJson(s,Quiz[].class)[0];
+                                    new HttpRequestMaker(){
+                                        @Override
+                                        public void onPostExecute(String s){
+                                            Creator creator = new Gson().fromJson(s,Creator.class);
+                                            startActivity(new Intent(SHomeActivity.this,SQuizPreviewActivity.class)
+                                                    .putExtra("student",student).putExtra("quiz",quiz).putExtra("creator",creator));
+                                        }
+                                    }.execute("POST","http://188.25.199.62:8000/teacherName",new Gson().toJson(quiz));
+
                                 }
                                 catch(Exception e){
                                     Toast.makeText(SHomeActivity.this,R.string.shomeincorrectcode,Toast.LENGTH_LONG).show();
