@@ -3,6 +3,7 @@ package com.example.aeroz.quizzapp;
 import android.app.DownloadManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.google.android.gms.common.api.Response;
@@ -19,8 +20,6 @@ public class SResultActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sresult);
-
-
 
     }
 }
