@@ -74,8 +74,7 @@ public class PProfileActivity extends AppCompatActivity {
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event)  {
         if (keyCode == KeyEvent.KEYCODE_BACK ) {
-            startActivity(new Intent(PProfileActivity.this,PHomeActivity.class).putExtra("teacher",teacher));
-            return true;
+
         }
 
         return super.onKeyDown(keyCode, event);
