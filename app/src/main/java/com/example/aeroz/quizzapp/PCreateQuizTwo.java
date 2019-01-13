@@ -46,7 +46,7 @@ public class PCreateQuizTwo extends AppCompatActivity {
         active = findViewById(R.id.switch_pcreatequiztwo_active);
         textViewCode = findViewById(R.id.txtView_pcreatequiztwo_code);
         editTextTime = findViewById(R.id.edtTxt_pcreatequiztwo_time);
-        imageView = findViewById(R.id.imgView_pcreatequiztwo_ic_back);
+//        imageView = findViewById(R.id.imgView_pcreatequiztwo_ic_back);
 
         quiz = (Quiz)getIntent().getExtras().getSerializable("quiz");
         teacher = (Teacher)getIntent().getExtras().getSerializable("teacher");
