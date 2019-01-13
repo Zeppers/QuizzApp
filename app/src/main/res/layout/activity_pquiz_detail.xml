@@ -16,31 +16,12 @@
 
 
         <TextView
-            android:id="@+id/txtView_pquizdetail_data_creation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="48dp"
-            android:layout_marginLeft="48dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="48dp"
-            android:layout_marginRight="48dp"
-            android:text="@string/pquizdetail_data1"
-            android:textColor="@android:color/darker_gray"
-            android:textSize="14sp"
-            android:textStyle="italic"
-            app:fontFamily="@font/quicksand_light"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtView_pquizdetail_quizname_dynamic" />
-
-        <TextView
             android:id="@+id/txtView_pquizdetail_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginLeft="24dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="16dp"
             android:layout_marginEnd="24dp"
             android:layout_marginRight="24dp"
             android:text="@string/pquizdetail_desc"
@@ -66,7 +47,7 @@
             app:fontFamily="@font/quicksand_light"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imgView_pquizdetail_info"
-            app:layout_constraintTop_toBottomOf="@+id/txtView_pquizdetail_data_expiration" />
+            app:layout_constraintTop_toBottomOf="@+id/txtView_pquizdetail_quizname_dynamic2" />
 
         <TextView
             android:id="@+id/txtView_pquizdetail_timeperquestion_dynamic"
@@ -87,9 +68,9 @@
             android:layout_height="24dp"
             android:layout_marginStart="24dp"
             android:layout_marginLeft="24dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="4dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtView_pquizdetail_data_expiration"
+            app:layout_constraintTop_toTopOf="@+id/txtView_pquizdetail_information"
             app:srcCompat="@drawable/ic_informations" />
 
         <ImageView
@@ -232,6 +213,24 @@
             app:layout_constraintTop_toBottomOf="@+id/txtView_pquizdetail_header" />
 
         <TextView
+            android:id="@+id/txtView_pquizdetail_code_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:text="Code"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="18sp"
+            app:fontFamily="@font/quicksand_light"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtView_pquizdetail_quizname_dynamic" />
+
+        <TextView
             android:id="@+id/txtView_pquizdetail_quizname_dynamic"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -250,23 +249,22 @@
             app:layout_constraintTop_toBottomOf="@+id/txtView_pquizdetail_quizname" />
 
         <TextView
-            android:id="@+id/txtView_pquizdetail_data_expiration"
+            android:id="@+id/txtView_pquizdetail_quizname_dynamic2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="48dp"
-            android:layout_marginLeft="48dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
             android:layout_marginTop="4dp"
-            android:layout_marginEnd="48dp"
-            android:layout_marginRight="48dp"
-            android:text="@string/pquizdetail_data2"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:text="XXXX"
             android:textColor="@android:color/darker_gray"
-            android:textSize="14sp"
-            android:textStyle="italic"
-            app:fontFamily="@font/quicksand_light"
+            android:textSize="18sp"
+            app:fontFamily="@font/quicksand_bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtView_pquizdetail_data_creation" />
+            app:layout_constraintTop_toBottomOf="@+id/txtView_pquizdetail_code_header" />
 
         <TextView
             android:id="@+id/txtView_pquizdetail_noquestions_dynamic"

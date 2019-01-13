@@ -10,6 +10,7 @@
     <string name="btn_pcreatequiz_add_question">+ Add a new question</string>
     <string name="btn_paddquestion_add_question">Add question</string>
     <string name="btn_pcreatequiz_nextstep">Next step</string>
+    <string name="btn_pcreatequiztwo_create">DONE!</string>
 
     <string name="splashscreen_txt">Designed and developed with love by <b>Zeppers</b></string>
 
@@ -61,7 +62,7 @@
     <string name="pquizdetail_quizname">Quiz name</string>
     <string name="pquizdetail_data1">Created on 12th december of 2018</string>
     <string name="pquizdetail_data2">Expires on 20th december of 2018</string>
-    <string name="pquizdetail_info">When expires, you\'ll receive a full report of all results and commits to this quiz on your email address</string>
+    <string name="pquizdetail_info">Even if the quiz is public or private, this is the code. Be careful to share the code of a private quiz with the people you want to take it.</string>
     <string name="pquizdetail_desc">Description</string>
     <string name="pquizdetail_timequest">Time/question</string>
     <string name="pquizdetail_noquest">No. questions</string>

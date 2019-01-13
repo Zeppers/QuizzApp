@@ -163,75 +163,99 @@
         app:layout_constraintTop_toBottomOf="@+id/txtView_paddquestion_answer4" />
 
             <TextView
-        android:id="@+id/txtView_paddquestion_answer1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        android:text="@string/paddquestion_answer1"
-        android:textColor="@android:color/darker_gray"
-        android:textSize="18sp"
-        app:fontFamily="@font/quicksand_light"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtText_paddquestion_question" />
+                android:id="@+id/txtView_paddquestion_answer1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/paddquestion_answer1"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="18sp"
+                app:fontFamily="@font/quicksand_light"
+                app:layout_constraintStart_toEndOf="@+id/checkbox_paddquestion_answer1"
+                app:layout_constraintTop_toBottomOf="@+id/edtText_paddquestion_question" />
 
-    <TextView
-        android:id="@+id/txtView_paddquestion_answer2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        android:text="@string/paddquestion_answer2"
-        android:textColor="@android:color/darker_gray"
-        android:textSize="18sp"
-        app:fontFamily="@font/quicksand_light"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtText_paddquestion_answer1" />
+            <TextView
+                android:id="@+id/txtView_paddquestion_answer2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/paddquestion_answer2"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="18sp"
+                app:fontFamily="@font/quicksand_light"
+                app:layout_constraintStart_toEndOf="@+id/checkbox_paddquestion_answer2"
+                app:layout_constraintTop_toBottomOf="@+id/edtText_paddquestion_answer1" />
 
-    <TextView
-        android:id="@+id/txtView_paddquestion_answer3"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        android:text="@string/paddquestion_answer3"
-        android:textColor="@android:color/darker_gray"
-        android:textSize="18sp"
-        app:fontFamily="@font/quicksand_light"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtText_paddquestion_answer2" />
+            <TextView
+                android:id="@+id/txtView_paddquestion_answer3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/paddquestion_answer3"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="18sp"
+                app:fontFamily="@font/quicksand_light"
+                app:layout_constraintStart_toEndOf="@+id/checkbox_paddquestion_answer3"
+                app:layout_constraintTop_toBottomOf="@+id/edtText_paddquestion_answer2" />
 
-    <TextView
-        android:id="@+id/txtView_paddquestion_answer4"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        android:text="@string/paddquestion_answer4"
-        android:textColor="@android:color/darker_gray"
-        android:textSize="18sp"
-        app:fontFamily="@font/quicksand_light"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtText_paddquestion_answer3" />
-</android.support.constraint.ConstraintLayout>
+            <TextView
+                android:id="@+id/txtView_paddquestion_answer4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/paddquestion_answer4"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="18sp"
+                app:fontFamily="@font/quicksand_light"
+                app:layout_constraintStart_toEndOf="@+id/checkbox_paddquestion_answer4"
+                app:layout_constraintTop_toBottomOf="@+id/edtText_paddquestion_answer3" />
+
+            <CheckBox
+                android:id="@+id/checkbox_paddquestion_answer1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtText_paddquestion_question" />
+
+            <CheckBox
+                android:id="@+id/checkbox_paddquestion_answer2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtText_paddquestion_answer1" />
+
+            <CheckBox
+                android:id="@+id/checkbox_paddquestion_answer3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtText_paddquestion_answer2" />
+
+            <CheckBox
+                android:id="@+id/checkbox_paddquestion_answer4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtText_paddquestion_answer3" />
+        </android.support.constraint.ConstraintLayout>
 </ScrollView>

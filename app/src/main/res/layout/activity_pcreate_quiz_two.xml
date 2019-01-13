@@ -6,6 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".PCreateQuizTwo">
 
+    <Button
+        android:id="@+id/btn_pcreatequiztwo_create"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginBottom="25dp"
+        android:background="@color/colorAccent"
+        android:text="@string/btn_pcreatequiztwo_create"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:fontFamily="@font/quicksand_bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <ImageView
         android:id="@+id/imgView_pcreatequiztwo_ic_back"
         android:layout_width="32dp"
@@ -35,9 +54,9 @@
         android:id="@+id/txtView_pcreatequiztwo_code"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="4dp"
         android:text="Code"
         android:textColor="@color/colorAccent"
         android:textSize="24sp"
