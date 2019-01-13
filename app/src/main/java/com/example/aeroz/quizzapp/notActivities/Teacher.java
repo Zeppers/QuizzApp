@@ -91,4 +91,11 @@ public class Teacher implements Serializable {
         return inactives;
     }
 
+    public int getIndexOfQuiz(int code){
+        for(int i = 0;i<this.quizes.size();i++)
+            if(this.getQuizes().get(i).getCode()==code)
+                return i;
+        return -1;
+    }
+
 }

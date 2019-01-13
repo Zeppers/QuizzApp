@@ -9,12 +9,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.aeroz.quizzapp.notActivities.Creator;
 import com.example.aeroz.quizzapp.notActivities.HttpRequestMaker;
 import com.example.aeroz.quizzapp.notActivities.Quiz;
 import com.example.aeroz.quizzapp.notActivities.Student;
 import com.example.aeroz.quizzapp.notActivities.TakenQuiz;
 import com.example.aeroz.quizzapp.notActivities.TakenQuizDB;
 import com.google.gson.Gson;
+
+import org.json.JSONObject;
 
 
 public class SQuizPreviewActivity extends AppCompatActivity {
@@ -23,7 +26,7 @@ public class SQuizPreviewActivity extends AppCompatActivity {
     private Student student;
     private String creatorName;
     private TakenQuizDB takenQuizDB;
-
+    private TextView textViewCreator;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,12 +35,11 @@ public class SQuizPreviewActivity extends AppCompatActivity {
         //Fields
 
         TextView quizName=findViewById(R.id.txtView_squizpreview_dynamic_quizname);
-        TextView creator=findViewById(R.id.txtView_squizpreview_dynamic_creator);
         TextView quizTimePerQustion=findViewById(R.id.txtView_squizpreview_dynamic_timeq);
         TextView noQuestions=findViewById(R.id.txtView_squizpreview_dynamic_noq);
         TextView quizDescription=findViewById(R.id.txtView_squizpreview_dynamic_description);
         ImageView backIcon=findViewById(R.id.imgView_squizpreview_ic_back);
-
+        textViewCreator = findViewById(R.id.txtView_squizpreview_dynamic_creator);
         quiz=(Quiz) getIntent().getExtras().getSerializable("quiz");
         student = (Student)getIntent().getExtras().getSerializable("student");
         Log.d("ehehe", "onCreate: "+student);
@@ -46,7 +48,9 @@ public class SQuizPreviewActivity extends AppCompatActivity {
         quizTimePerQustion.setText(String.valueOf(quiz.getTime()/quiz.getQuestions().size()));
         noQuestions.setText(String.valueOf(quiz.getQuestions().size()));
         quizDescription.setText(String.valueOf(quiz.getDescription()));
-        creator.setText("Pulifrici");
+
+        Creator creator = (Creator)getIntent().getExtras().getSerializable("creator");
+        textViewCreator.setText(creator.getCreator());
 
         backIcon.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -13,6 +13,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.aeroz.quizzapp.notActivities.Creator;
 import com.example.aeroz.quizzapp.notActivities.HttpRequestMaker;
 import com.example.aeroz.quizzapp.notActivities.Quiz;
 import com.example.aeroz.quizzapp.notActivities.QuizAdapter;
@@ -65,9 +66,9 @@ public class SHomeActivity extends AppCompatActivity {
                         new HttpRequestMaker(){
                             @Override
                             public void onPostExecute(String s){
-                                Log.d("testosteron", "onPostExecute: "+s);
+                                Creator creator = new Gson().fromJson(s,Creator.class);
                                 startActivity(new Intent(SHomeActivity.this,SQuizPreviewActivity.class)
-                                        .putExtra("quiz",quiz).putExtra("student",student));
+                                        .putExtra("quiz",quiz).putExtra("student",student).putExtra("creator",creator));
                             }
                         }
                                 .execute("POST","http://188.25.199.62:8000/teacherName",new Gson().toJson(quiz));
