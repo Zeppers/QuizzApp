@@ -31,6 +31,12 @@ public class DemoQuizActivity extends AppCompatActivity {
             }
         });
 
+        findViewById(R.id.imgView_squestion_ic_close).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
     }
     @Override

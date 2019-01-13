@@ -56,7 +56,7 @@ public class SQuizPreviewActivity extends AppCompatActivity {
         backIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    SQuizPreviewActivity.this.finish();
+                    startActivity(new Intent(SQuizPreviewActivity.this,SHomeActivity.class).putExtra("student",student));
             }
         });
         findViewById(R.id.btn_squizpreview_start).setOnClickListener(new View.OnClickListener() {

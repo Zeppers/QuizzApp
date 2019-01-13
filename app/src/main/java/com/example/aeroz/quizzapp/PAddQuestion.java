@@ -94,6 +94,14 @@ public class PAddQuestion extends AppCompatActivity {
                         .putExtra("quiz",quiz));
             }
         });
+        findViewById(R.id.imgView_paddquestion_ic_close).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(PAddQuestion.this,PCreateQuiz.class)
+                .putExtra("quiz",quiz)
+                .putExtra("teacher",teacher));
+            }
+        });
     }
     private boolean allAnswersFilled(){
         for(int i = 0;i<4;i++)

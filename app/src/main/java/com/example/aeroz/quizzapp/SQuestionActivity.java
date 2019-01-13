@@ -52,6 +52,7 @@ public class SQuestionActivity extends AppCompatActivity {
         for(int i = 0;i<4;i++)
             checked[i]=false;
         imageView = findViewById(R.id.imgView_squestion_ic_close);
+
         button = findViewById(R.id.btn_squestion_continue);
         textViewNoQuestion = findViewById(R.id.txtView_squestion_noquestion);
         textViewQuestion = findViewById(R.id.txtView_squestion_question);
@@ -60,6 +61,12 @@ public class SQuestionActivity extends AppCompatActivity {
         textViewsAnswers[2] = findViewById(R.id.txtView_squestion_ans3);
         textViewsAnswers[3] = findViewById(R.id.txtView_squestion_ans4);
         student = (Student)getIntent().getExtras().getSerializable("student");
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SQuestionActivity.this,SHomeActivity.class).putExtra("student",student));
+            }
+        });
         quiz = (Quiz)getIntent().getExtras().getSerializable("quiz");
         takenQuizDB = (TakenQuizDB)getIntent().getExtras().getSerializable("takenQuizDB");
 //        Collections.shuffle(quiz.getQuestions());
