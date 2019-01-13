@@ -2,8 +2,10 @@ package com.example.aeroz.quizzapp;
 
 import android.app.Activity;
 import android.app.Application;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -59,36 +61,46 @@ public class SigninActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                email = editTextEmail.getText().toString();
-                password = editTextPassword.getText().toString();
-                emailPassword = new EmailPassword(email,password);
+                if(isNetworkAvailable(SigninActivity.this)){
+                    email = editTextEmail.getText().toString();
+                    password = editTextPassword.getText().toString();
+                    emailPassword = new EmailPassword(email,password);
 
-                if(email.contains("@stud.ase.ro")){
-                    httpRequestMaker = new HttpRequestMaker(){
-                        @Override
-                        public void onPostExecute(String s){
-                            Student student = new Gson().fromJson(s,Student.class);
-                            getSharedPreferences("account",MODE_PRIVATE).edit().putString("email",student.getEmail()).putString("password",student.getPassword()).apply();
-                            startActivity(new Intent(SigninActivity.this,SHomeActivity.class).putExtra("student",student));
-                        }
-                    };
-                    httpRequestMaker.execute("POST","http://188.25.199.62:8000/login/student",new Gson().toJson(emailPassword));
-                }
-                else if(email.contains("@prof.ase.ro")){
-                    httpRequestMaker = new HttpRequestMaker(){
-                        @Override
-                        public void onPostExecute(String s){
-                            Teacher teacher = new Gson().fromJson(s,Teacher.class);
-                            getSharedPreferences("account",MODE_PRIVATE).edit().putString("email",teacher.getEmail()).putString("password",teacher.getPassword()).apply();
-                            startActivity(new Intent(SigninActivity.this,PHomeActivity.class).putExtra("teacher",teacher));
-                        }
-                    };
-                    httpRequestMaker.execute("POST","http://188.25.199.62:8000/login/teacher",new Gson().toJson(emailPassword));
+                    if(email.contains("@stud.ase.ro")){
+                        httpRequestMaker = new HttpRequestMaker(){
+                            @Override
+                            public void onPostExecute(String s){
+                                Student student = new Gson().fromJson(s,Student.class);
+                                getSharedPreferences("account",MODE_PRIVATE).edit().putString("email",student.getEmail()).putString("password",student.getPassword()).apply();
+                                startActivity(new Intent(SigninActivity.this,SHomeActivity.class).putExtra("student",student));
+                            }
+                        };
+                        httpRequestMaker.execute("POST","http://188.25.199.62:8000/login/student",new Gson().toJson(emailPassword));
+                    }
+                    else if(email.contains("@prof.ase.ro")){
+                        httpRequestMaker = new HttpRequestMaker(){
+                            @Override
+                            public void onPostExecute(String s){
+                                Teacher teacher = new Gson().fromJson(s,Teacher.class);
+                                getSharedPreferences("account",MODE_PRIVATE).edit().putString("email",teacher.getEmail()).putString("password",teacher.getPassword()).apply();
+                                startActivity(new Intent(SigninActivity.this,PHomeActivity.class).putExtra("teacher",teacher));
+                            }
+                        };
+                        httpRequestMaker.execute("POST","http://188.25.199.62:8000/login/teacher",new Gson().toJson(emailPassword));
+                    }
+                    else{
+                        Toast.makeText(SigninActivity.this,R.string.signintoastinstitutional,Toast.LENGTH_LONG).show();
+                    }
                 }
                 else{
-                    Toast.makeText(SigninActivity.this,R.string.signintoastinstitutional,Toast.LENGTH_LONG).show();
+
                 }
-            }
+                }
+
         });
+    }
+    public boolean isNetworkAvailable(Context context) {
+        final ConnectivityManager connectivityManager = ((ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE));
+        return connectivityManager.getActiveNetworkInfo() != null && connectivityManager.getActiveNetworkInfo().isConnected();
     }
 }

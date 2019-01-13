@@ -134,13 +134,13 @@ public class SQuestionActivity extends AppCompatActivity {
     public void displayCurrent(){
         textViewNoQuestion.setText(""+(counter+1)+"/"+quiz.getQuestions().size());
         textViewQuestion.setText(quiz.getQuestions().get(counter).getText());
-        for(int i = 0;i<quiz.getQuestions().get(i).getAnswers().size();i++)
+        for(int i = 0;i<4;i++)
             textViewsAnswers[i].setText(quiz.getQuestions().get(counter).getAnswers().get(i).getText());
     }
     public void resetQuestion(){
         correct = true;
         question = quiz.getQuestions().get(counter);
-        for(int i = 0;i<quiz.getQuestions().get(i).getAnswers().size();i++){
+        for(int i = 0;i<4;i++){
             textViewsAnswers[i].setTextColor(getResources().getColor(R.color.white));
             checked[i] = false;
         }
