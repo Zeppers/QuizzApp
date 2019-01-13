@@ -22,6 +22,7 @@ public class SProfileActivity extends AppCompatActivity {
     private Student student;
     private ImageView ic_return;
     private TextView txt_avg_score;
+    private TextView txt_quiz_history_no;
     private ListView list_quiz_history;
     private List<TakenQuiz> takenQuizes;
 
@@ -36,6 +37,7 @@ public class SProfileActivity extends AppCompatActivity {
         student = (Student)getIntent().getExtras().getSerializable("student");
         ic_return=findViewById(R.id.imgView_sprofile_ic_close);
         txt_avg_score=findViewById(R.id.txtView_sprofie_score);
+        txt_quiz_history_no=findViewById(R.id.txtView_sprofile_quizhistory);
         list_quiz_history=findViewById(R.id.list_sprofile_quizhistory);
         takenQuizes=new ArrayList<>();
 
@@ -59,6 +61,8 @@ public class SProfileActivity extends AppCompatActivity {
                 startActivity(new Intent(SProfileActivity.this,SHomeActivity.class).putExtra("student",student));
             }
         });
+
+        txt_quiz_history_no.setText("Quiz history ( "+String.valueOf(student.getTakenQuizes().size())+" taken by now )");
 
     }
 }

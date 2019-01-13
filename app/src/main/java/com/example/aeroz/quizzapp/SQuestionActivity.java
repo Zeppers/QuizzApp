@@ -1,25 +1,22 @@
 package com.example.aeroz.quizzapp;
 
 import android.content.Intent;
-import android.graphics.Color;
+import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.aeroz.quizzapp.notActivities.HttpRequestMaker;
 import com.example.aeroz.quizzapp.notActivities.Question;
 import com.example.aeroz.quizzapp.notActivities.Quiz;
 import com.example.aeroz.quizzapp.notActivities.Student;
-import com.example.aeroz.quizzapp.notActivities.TakenQuiz;
 import com.example.aeroz.quizzapp.notActivities.TakenQuizDB;
 import com.google.gson.Gson;
-
-import java.util.Collections;
-import java.util.List;
 
 public class SQuestionActivity extends AppCompatActivity {
 
@@ -37,6 +34,12 @@ public class SQuestionActivity extends AppCompatActivity {
     private Question question;
     private TakenQuizDB takenQuizDB;
     private boolean correct=true;
+
+    //Progress Bar
+    public ProgressBar progressBar;
+    public CountDownTimer countDownTimer;
+    public int timer=0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,6 +60,7 @@ public class SQuestionActivity extends AppCompatActivity {
         takenQuizDB = (TakenQuizDB)getIntent().getExtras().getSerializable("takenQuizDB");
 //        Collections.shuffle(quiz.getQuestions());
         question = quiz.getQuestions().get(0);
+        progressBar=(ProgressBar) findViewById(R.id.prgBar_squestion_timeleft);
         ////////////////////
         displayCurrent();
         textViewsAnswers[0].setOnClickListener(new View.OnClickListener() {
@@ -99,6 +103,8 @@ public class SQuestionActivity extends AppCompatActivity {
                     textViewsAnswers[3].setTextColor(getResources().getColor(R.color.white));
             }
         });
+
+        progressBar.setMax(quiz.getTime()/quiz.getQuestions().size());
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -110,13 +116,14 @@ public class SQuestionActivity extends AppCompatActivity {
                     Log.d("yeyeye", "onClick: ");
                     new HttpRequestMaker().execute("POST","http://188.25.199.62:8000/takenQuizes",
                             new Gson().toJson(takenQuizDB));
+                    countDownTimer.cancel();
                     SQuestionActivity.this.finish();
                     startActivity(new Intent(SQuestionActivity.this,SResultActivity.class)
                     .putExtra("student",student).putExtra("score",score).putExtra("quiz",quiz)
                     .putExtra("noCorrect",noCorrect));
                 }
                 else{
-                    //verifyAnswer();
+                    Log.d("timerrr" ,"onClick: "+timer);
                     for(int i = 0;i<4;i++) {
                         if((question.getAnswers().get(i).getIsCorect()&&!checked[i])||(!question.getAnswers().get(i).getIsCorect()&&checked[i]))
                             correct = false;
@@ -127,9 +134,39 @@ public class SQuestionActivity extends AppCompatActivity {
                     counter++;
                     resetQuestion();
                     displayCurrent();
+                    countDownTimer.cancel();
+                    timer=0;
+                    countDownTimer = new CountDownTimer((long)quiz.getTime()/quiz.getQuestions().size()*1000,1000){
+                        @Override
+                        public void onTick(long millisUntilFinished) {
+                            timer++;
+                            progressBar.setProgress(timer);
+                        }
+
+                        @Override
+                        public void onFinish() {
+                            button.performClick();
+                        }
+                    }.start();
                 }
             }
         });
+
+
+        countDownTimer=new CountDownTimer((long)quiz.getTime()/quiz.getQuestions().size()*1000,1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                timer++;
+                progressBar.setProgress(timer);
+            }
+
+            @Override
+            public void onFinish() {
+                    button.performClick();
+            }
+        };
+        countDownTimer.start();
+
     }
     public void displayCurrent(){
         textViewNoQuestion.setText(""+(counter+1)+"/"+quiz.getQuestions().size());
