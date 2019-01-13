@@ -37,20 +37,6 @@
         app:srcCompat="@drawable/ic_back" />
 
     <TextView
-        android:id="@+id/txtView_pcreatequiztwo_codeis"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="16dp"
-        android:text="Your code is: "
-        android:textColor="@android:color/darker_gray"
-        android:textSize="18sp"
-        app:fontFamily="@font/quicksand_bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtView_pcreatequiztwo_privatetxt" />
-
-    <TextView
         android:id="@+id/txtView_pcreatequiztwo_code"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -77,6 +63,20 @@
         app:fontFamily="@font/quicksand_light"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtView_pcreatequiztwo_explain" />
+
+    <TextView
+        android:id="@+id/txtView_pcreatequiztwo_codeis"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="16dp"
+        android:text="Your code is: "
+        android:textColor="@android:color/darker_gray"
+        android:textSize="18sp"
+        app:fontFamily="@font/quicksand_bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtView_pcreatequiztwo_privatetxt" />
 
     <TextView
         android:id="@+id/txtView_pcreatequiztwo_explain"
