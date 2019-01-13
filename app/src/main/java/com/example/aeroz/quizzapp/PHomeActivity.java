@@ -3,6 +3,7 @@ package com.example.aeroz.quizzapp;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
@@ -47,14 +48,14 @@ public class PHomeActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Quiz quiz = publicQuizes.get(position);
-                startActivity(new Intent(PHomeActivity.this,PQuizDetailActivity.class).putExtra("quiz",quiz));
+                startActivity(new Intent(PHomeActivity.this,PQuizDetailActivity.class).putExtra("quiz",quiz).putExtra("teacher",teacher));
             }
         });
         listView2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Quiz quiz = privateQuizes.get(position);
-                startActivity(new Intent(PHomeActivity.this,PQuizDetailActivity.class).putExtra("quiz",quiz));
+                startActivity(new Intent(PHomeActivity.this,PQuizDetailActivity.class).putExtra("quiz",quiz).putExtra("teacher",teacher));
             }
         });
         findViewById(R.id.ic_phome_profile).setOnClickListener(new View.OnClickListener() {
@@ -66,4 +67,13 @@ public class PHomeActivity extends AppCompatActivity {
         });
 
     }
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)  {
+        if (keyCode == KeyEvent.KEYCODE_BACK ) {
+
+        }
+
+        return super.onKeyDown(keyCode, event);
+    }
+
 }

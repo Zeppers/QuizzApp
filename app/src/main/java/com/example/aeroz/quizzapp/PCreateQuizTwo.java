@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -140,4 +141,13 @@ public class PCreateQuizTwo extends AppCompatActivity {
 
         return jsonQuiz;
     }
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)  {
+        if (keyCode == KeyEvent.KEYCODE_BACK ) {
+
+        }
+
+        return super.onKeyDown(keyCode, event);
+    }
+
 }
