@@ -15,8 +15,12 @@ import com.example.aeroz.quizzapp.notActivities.HttpRequestMaker;
 import com.example.aeroz.quizzapp.notActivities.Question;
 import com.example.aeroz.quizzapp.notActivities.Quiz;
 import com.example.aeroz.quizzapp.notActivities.Student;
+import com.example.aeroz.quizzapp.notActivities.TakenQuiz;
 import com.example.aeroz.quizzapp.notActivities.TakenQuizDB;
 import com.google.gson.Gson;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class SQuestionActivity extends AppCompatActivity {
 
@@ -34,7 +38,6 @@ public class SQuestionActivity extends AppCompatActivity {
     private Question question;
     private TakenQuizDB takenQuizDB;
     private boolean correct=true;
-
     //Progress Bar
     public ProgressBar progressBar;
     public CountDownTimer countDownTimer;
@@ -113,6 +116,16 @@ public class SQuestionActivity extends AppCompatActivity {
                     String[] scr=new String[2];scr = String.format("%.2f",score).split(",");
                     score=Float.parseFloat(scr[0]+"."+scr[1])*100;
                     takenQuizDB.setScore((int)score);
+
+                    List<TakenQuiz> tqs = new ArrayList<>();
+                    tqs = student.getTakenQuizes();
+                    int index = getIndexOfTakenQuiz(takenQuizDB,student.getTakenQuizes());
+                    if(index!=-1)
+                        tqs.set(index,new TakenQuiz(takenQuizDB.getScore(),takenQuizDB.getRemainingTries(),quiz));
+                    else
+                        tqs.add(new TakenQuiz(takenQuizDB.getScore(),takenQuizDB.getRemainingTries(),quiz));
+                    student.setTakenQuizes(tqs);
+
                     Log.d("yeyeye", "onClick: ");
                     new HttpRequestMaker().execute("POST","http://188.25.199.62:8000/takenQuizes",
                             new Gson().toJson(takenQuizDB));
@@ -120,7 +133,8 @@ public class SQuestionActivity extends AppCompatActivity {
                     SQuestionActivity.this.finish();
                     startActivity(new Intent(SQuestionActivity.this,SResultActivity.class)
                     .putExtra("student",student).putExtra("score",score).putExtra("quiz",quiz)
-                    .putExtra("noCorrect",noCorrect));
+                    .putExtra("noCorrect",noCorrect)
+                    .putExtra("creator",getIntent().getExtras().getSerializable("creator")));
                 }
                 else{
                     Log.d("timerrr" ,"onClick: "+timer);
@@ -181,5 +195,12 @@ public class SQuestionActivity extends AppCompatActivity {
             textViewsAnswers[i].setTextColor(getResources().getColor(R.color.white));
             checked[i] = false;
         }
+
+    }
+    public int getIndexOfTakenQuiz(TakenQuizDB tq, List<TakenQuiz> takenQuizes){
+        for(int i = 0;i<takenQuizes.size();i++)
+            if(tq.getQuizId()==takenQuizes.get(i).getQuiz().getId())
+                return i;
+        return -1;
     }
 }

@@ -49,7 +49,7 @@ public class SQuizPreviewActivity extends AppCompatActivity {
         noQuestions.setText(String.valueOf(quiz.getQuestions().size()));
         quizDescription.setText(String.valueOf(quiz.getDescription()));
 
-        Creator creator = (Creator)getIntent().getExtras().getSerializable("creator");
+        final Creator creator = (Creator)getIntent().getExtras().getSerializable("creator");
         textViewCreator.setText(creator.getCreator());
 
         backIcon.setOnClickListener(new View.OnClickListener() {
@@ -72,7 +72,8 @@ public class SQuizPreviewActivity extends AppCompatActivity {
                                 takenQuizDB.takeTry();
                                 new HttpRequestMaker().execute("POST","http://188.25.199.62:8000/takenQuizes",new Gson().toJson(takenQuizDB));
                                 startActivity(new Intent(SQuizPreviewActivity.this,SQuestionActivity.class)
-                                        .putExtra("student",student).putExtra("quiz",quiz).putExtra("takenQuizDB",takenQuizDB));
+                                        .putExtra("student",student).putExtra("quiz",quiz).putExtra("takenQuizDB",takenQuizDB)
+                                .putExtra("creator",creator));
                             }
                             else{
                                 Toast.makeText(SQuizPreviewActivity.this,R.string.shometries,Toast.LENGTH_LONG).show();
