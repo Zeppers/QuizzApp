@@ -31,21 +31,6 @@ public class DemoQuizActivity extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.imgView_squestion_ic_close).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
-    }
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event)  {
-        if (keyCode == KeyEvent.KEYCODE_BACK ) {
-
-        }
-
-        return super.onKeyDown(keyCode, event);
     }
 
 }

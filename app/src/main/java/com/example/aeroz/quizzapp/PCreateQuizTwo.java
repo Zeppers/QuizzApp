@@ -141,13 +141,5 @@ public class PCreateQuizTwo extends AppCompatActivity {
 
         return jsonQuiz;
     }
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event)  {
-        if (keyCode == KeyEvent.KEYCODE_BACK ) {
-
-        }
-
-        return super.onKeyDown(keyCode, event);
-    }
 
 }

@@ -16,8 +16,6 @@ import com.google.android.gms.common.api.Response;
 
 import org.json.JSONObject;
 
-
-
 public class SResultActivity extends AppCompatActivity {
     private TextView txt_score;
     private TextView correctAns;
@@ -65,13 +63,6 @@ public class SResultActivity extends AppCompatActivity {
             }
         });
     }
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event)  {
-        if (keyCode == KeyEvent.KEYCODE_BACK ) {
 
-        }
-
-        return super.onKeyDown(keyCode, event);
-    }
 
 }
