@@ -142,7 +142,7 @@
             android:textSize="18sp"
             app:fontFamily="@font/quicksand_light"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtView_pquizdetail_noquestions_dynamic2" />
+            app:layout_constraintTop_toBottomOf="@+id/txtView_pquizdetail_timeperquestion_dynamic" />
 
         <TextView
             android:id="@+id/txtView_pquizdetail_statistics_title2"
@@ -165,14 +165,12 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginLeft="24dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="32dp"
+            android:layout_marginTop="8dp"
             android:text="12 students (by now)"
             android:textColor="@android:color/darker_gray"
             android:textSize="14sp"
             android:textStyle="bold"
             app:fontFamily="@font/quicksand_light"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtView_pquizdetail_statistics_title2" />
 
@@ -279,32 +277,6 @@
             app:fontFamily="@font/quicksand_regular"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtView_pquizdetail_noquestions" />
-
-        <TextView
-            android:id="@+id/txtView_pquizdetail_noquestions_dynamic2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:text="@string/pquizdetail_seeall"
-            android:textAllCaps="false"
-            android:textColor="@android:color/darker_gray"
-            android:textSize="18sp"
-            app:fontFamily="@font/quicksand_bold"
-            app:layout_constraintEnd_toStartOf="@+id/imgView_pquizdetail_ic_seeall"
-            app:layout_constraintTop_toBottomOf="@+id/txtView_pquizdetail_noquestions_dynamic" />
-
-        <ImageView
-            android:id="@+id/imgView_pquizdetail_ic_seeall"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginRight="24dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtView_pquizdetail_noquestions_dynamic"
-            app:srcCompat="@drawable/ic_right_arrow" />
 
     </android.support.constraint.ConstraintLayout>
 </ScrollView>
