@@ -211,13 +211,5 @@ public class SQuestionActivity extends AppCompatActivity {
                 return i;
         return -1;
     }
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event)  {
-        if (keyCode == KeyEvent.KEYCODE_BACK ) {
-
-        }
-
-        return super.onKeyDown(keyCode, event);
-    }
 
 }
