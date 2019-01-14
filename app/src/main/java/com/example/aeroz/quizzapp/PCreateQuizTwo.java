@@ -75,6 +75,7 @@ public class PCreateQuizTwo extends AppCompatActivity {
         findViewById(R.id.btn_pcreatequiztwo_create).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                try{
                     int time = Integer.parseInt(editTextTime.getText().toString());
                     quiz.setTime(time);
                     quiz.setActive(active.isChecked());
@@ -86,7 +87,7 @@ public class PCreateQuizTwo extends AppCompatActivity {
                     }
                     else{
                         quiz.setCode(lastQuiz.getCode()+1);
-
+                        Log.d("convertinio", "onClick: "+convertQuizToJson(quiz,teacher.getId()).toString());
                         new HttpRequestMaker(){
                             @Override
                             public void onPostExecute(String s){
@@ -100,6 +101,10 @@ public class PCreateQuizTwo extends AppCompatActivity {
                                 }.execute("GET","http://188.25.199.62:8000/quizes/?code="+quiz.getCode());
                             }
                         }.execute("POST","http://188.25.199.62:8000/quizes",convertQuizToJson(quiz,teacher.getId()).toString());
+                    }
+                }
+                    catch(Exception e){
+                        Toast.makeText(PCreateQuizTwo.this, "insert a valid time!", Toast.LENGTH_SHORT).show();
                     }
             }
         });
@@ -121,8 +126,12 @@ public class PCreateQuizTwo extends AppCompatActivity {
             jsonQuiz.put("active",quiz.isActive());
             jsonQuiz.put("privat",quiz.isPrivat());
             jsonQuiz.put("code",quiz.getCode());
+            jsonQuiz.put("teacherId",id);
             for(Question question:quiz.getQuestions()){
+                jsonQuestion = new JSONObject();
+                jsonAnswers = new JSONArray();
                 for(Answer answer:question.getAnswers()){
+                    jsonAnswer = new JSONObject();
                     jsonAnswer.put("id",answer.getId());
                     jsonAnswer.put("text", answer.getText());
                     jsonAnswer.put("isCorrect",answer.getIsCorect());
@@ -134,20 +143,11 @@ public class PCreateQuizTwo extends AppCompatActivity {
                 jsonQuestions.put(jsonQuestion);
             }
             jsonQuiz.put("questions",jsonQuestions);
-            jsonQuiz.put("teacherId",id);
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
         return jsonQuiz;
-    }
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event)  {
-        if (keyCode == KeyEvent.KEYCODE_BACK ) {
-
-        }
-
-        return super.onKeyDown(keyCode, event);
     }
 
 }
