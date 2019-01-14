@@ -120,6 +120,12 @@ public class SQuestionActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(counter+1==quiz.getQuestions().size()){
+                    for(int i = 0;i<4;i++) {
+                        if((question.getAnswers().get(i).getIsCorect()&&!checked[i])||(!question.getAnswers().get(i).getIsCorect()&&checked[i]))
+                            correct = false;
+                    }
+                    if(correct)
+                        noCorrect++;
                     score = (float)noCorrect/quiz.getQuestions().size();
                     String[] scr=new String[2];scr = String.format("%.2f",score).split(",");
                     score=Float.parseFloat(scr[0]+"."+scr[1])*100;

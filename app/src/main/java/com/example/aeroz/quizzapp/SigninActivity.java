@@ -99,6 +99,15 @@ public class SigninActivity extends AppCompatActivity {
 
         });
     }
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)  {
+        if (keyCode == KeyEvent.KEYCODE_BACK ) {
+            startActivity(new Intent(SigninActivity.this,OnboardingActivity.class));
+            return true;
+        }
+
+        return super.onKeyDown(keyCode, event);
+    }
     public boolean isNetworkAvailable(Context context) {
         final ConnectivityManager connectivityManager = ((ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE));
         return connectivityManager.getActiveNetworkInfo() != null && connectivityManager.getActiveNetworkInfo().isConnected();

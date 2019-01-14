@@ -80,26 +80,32 @@ public class SHomeActivity extends AppCompatActivity {
                 button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        code=Integer.parseInt(editText.getText().toString());
-                        new HttpRequestMaker(){
-                            public void onPostExecute(String s){
-                                try{
-                                    quiz = new Gson().fromJson(s,Quiz[].class)[0];
-                                    new HttpRequestMaker(){
-                                        @Override
-                                        public void onPostExecute(String s){
-                                            Creator creator = new Gson().fromJson(s,Creator.class);
-                                            startActivity(new Intent(SHomeActivity.this,SQuizPreviewActivity.class)
-                                                    .putExtra("student",student).putExtra("quiz",quiz).putExtra("creator",creator));
-                                        }
-                                    }.execute("POST","http://188.25.199.62:8000/teacherName",new Gson().toJson(quiz));
+                        try{
+                            code=Integer.parseInt(editText.getText().toString());
+                            new HttpRequestMaker(){
+                                public void onPostExecute(String s){
+                                    try{
+                                        quiz = new Gson().fromJson(s,Quiz[].class)[0];
+                                        new HttpRequestMaker(){
+                                            @Override
+                                            public void onPostExecute(String s){
+                                                Creator creator = new Gson().fromJson(s,Creator.class);
+                                                startActivity(new Intent(SHomeActivity.this,SQuizPreviewActivity.class)
+                                                        .putExtra("student",student).putExtra("quiz",quiz).putExtra("creator",creator));
+                                            }
+                                        }.execute("POST","http://188.25.199.62:8000/teacherName",new Gson().toJson(quiz));
 
+                                    }
+                                    catch(Exception e){
+                                        Toast.makeText(SHomeActivity.this,R.string.shomeincorrectcode,Toast.LENGTH_LONG).show();
+                                    }
                                 }
-                                catch(Exception e){
-                                    Toast.makeText(SHomeActivity.this,R.string.shomeincorrectcode,Toast.LENGTH_LONG).show();
-                                }
-                            }
-                        }.execute("GET","http://188.25.199.62:8000/quizes/?code="+code);
+                            }.execute("GET","http://188.25.199.62:8000/quizes/?code="+code);
+                        }
+                        catch(Exception e){
+                            Toast.makeText(SHomeActivity.this, "the code is not valid :(", Toast.LENGTH_SHORT).show();
+                        }
+
                     }
                 });
             }
